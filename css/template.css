@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
+    background: #ECECEA;
+}
+
+/* Style en-tête */
+.en-tete{
+    background-color: #558C89;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    position: relative;    
+}
+
+.menu{
+    background-color: #74AFAD;
+    /* Essai  */
+    margin-top: -16px;
+    text-align: center;
+}
+.menu li {
+    display:inline-block;
+    padding:14px 16px;/* padding:20px; */
+    list-style:none;
+}
+.menu a {
+    color:#000;
+    text-decoration: none;
+}
+.menu a:hover {
+    color:#fff;
+}
+.current-menu-item a {
+    color:#ECECEA;
+}
+
+.colonne_laterale {
+    
+    width: 30%;
+    float: left;  
+    padding: 0 20px 0 20px; 
+    
+    list-style-type: none;
+}
+
+
+.colonne_contenu {
+    width: 68%;
+    float: left;
+    padding: 25px 20px;
+    background: white;
+}
+
+/* Clear floats after the columns */
+.contenu:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.colonne_laterale li {
+    list-style:none;
+}
+
+.colonne_laterale aside {
+    background:#FFF;
+    margin:0 0 15px;
+    padding:15px;
+}
+.colonne_laterale aside h1 {
+    border-bottom: 1px dashed #CCC;
+    margin-bottom:10px;
+}
+
+.footer {
+    background-color: #74AFAD;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    float:left;
+    margin-right: 8px;
+}
+
+

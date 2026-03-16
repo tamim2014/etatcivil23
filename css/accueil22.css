@@ -1,0 +1,245 @@
+*
+{
+	margin: 0px; 
+	padding:0px;
+	
+}
+
+body{
+    font-style: italic;
+	font-family: "Times New Roman", Georgia, Serif;
+}
+body  table tr td  div input
+{
+	border: 0px  #cf3fc3 dotted;
+	font-style: italic;
+	font-size: 15px;
+	font-family: "Times New Roman", Georgia, Serif;
+	color:#00004d;
+}
+body  table tr td  input
+{
+	border: 0px  #cf3fc3 dotted; 
+			 
+	font-style: italic;
+	font-size: 15px;
+	font-family: "Times New Roman", Georgia, Serif;
+	color:#000066;
+}
+
+/* Contenu de l'entete */
+.hollowTop  { 
+	background: inherit;
+	position:relative;
+	width:95%; margin:auto;
+	height:6em;
+	padding:.25% 12% .25% .25%;
+	z-index:3; 
+	color:#ececea;
+	
+	border-radius:5px; 
+	box-shadow:
+	0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+	0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+	
+.flag { border-radius:5px 0px 0px 5px; }
+.text_header{ line-height:2; font-family:Amiri; font-size:1.5em; text-align:center; fon-weight:bold; }  
+		
+	 
+
+.clean { clear:both; }
+.left { text-align:left; }
+label
+{
+	width:200px;
+	display:inline-block;
+	vertical-align:top;
+	text-align:left;
+}
+table
+{
+	border-spacing:0px;
+	background:#ffffff;
+	
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	padding:0px;
+
+	width:100%;
+	margin:0;
+}
+tr
+{
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	margin:0px;
+}
+td, th
+{
+	margin:0px;
+	border:0px;
+	/* padding:3px; */
+	text-align:center;
+}
+a  { text-align:right; text-decoration: none; }
+th
+{
+ color:white ;
+ background:green;	
+ border-radius:8px;
+ -webkit-border-radius:8px;
+ -moz-border-radius:8px;
+ box-shadow: 7px 6px 15px #333;
+
+}
+table.color_line tr:nth-child(2n+1) td {
+    color:Peru ;
+    background:silver;
+	 border-radius:8px;
+    -webkit-border-radius:8px;
+	-moz-border-radius:8px;
+}
+.color_line { position:absolute; z-index:2;  left:310px;  right:40px; top:114px;    height:490px; width:500px;   
+              overflow:  auto; 
+			  white-space:nowrap;
+			  display: block;  
+			}
+
+/*  Reduction hauteur table d'affichage resultat(lectureBD2.php)suite à une action sur le moteur de recherche de la page d'accueil*/
+.color_line_short { position:absolute; z-index:2;  left:310px;  right:40px; top:114px;    height:60px; width:523px;   
+              /* Pour limiter lataille du conteneur overflow:  auto; sinon il va s'adapter à la taille du contenu */ 
+			  background-color: #e5eecc;
+			  white-space:nowrap;
+			   
+			  box-shadow: 1px 1px 0px 0px green;
+			  -moz-box-shadow: 1px 1px 0px 0px green;
+			  -webkit-box-shadow: 1px 1px 0px 0px green;
+			
+			  /* Pour adapter  la taille de la table à son div conteneur i fo retirer   display: block; */ 
+}
+input ,select {
+   border-radius:4px;
+   -webkit-border-radius:4px;
+   -moz-border-radius:4px;
+   -khtml-border-radius:4px;
+   width:155px;
+   
+   	/*transform: rotate(-1deg);*/
+	/*box-shadow: 7px 6px 15px #333;  /* box-shadow: 7px 6px 15px #333;  */       
+    /*maxlength:100;*/
+}
+button      {
+	border-radius:4px;
+    -webkit-border-radius:4px;
+	-moz-border-radius:4px;
+   	/*transform: rotate(-1deg);*/
+	box-shadow: 1px #333; /*ct  7px 6px 15px #333;*/   /* box-shadow: 1px #333;  */     
+}
+
+
+#login_:hover , #pswd_:hover  { background-color: #1D702D; color:#ffffff; font-size: 17px; font-weight:bold;    box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5); }
+
+#valider_:hover { color: #1D702D; font-weight:bold; font-size: 20px; font-style: italic;}
+#recherchenum, #recherchenom { background-color: #e5eecc; border-radius:4px;}
+#recherchenum:hover, #recherchenom:hover { background-color: #cdbe7f; color:green;  font-weight:bold;  box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5);}
+.t_area{
+	    border-radius:15px;
+        text-align:center;
+        color:  #ffffff;   
+        font-family: "Times New Roman", Georgia, Serif;  /*Arial, Geneva, sans-serif; */
+		Font-Weight: Bold;
+		font-size: 12px;
+        padding:10px;
+        background-color: #93A299;   /*   #434543  silver #beae8c;   #1D702D;  #99993F; #e5eecc;  */
+		           
+        /* Effet creux */
+        box-shadow:
+        0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+        0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+		
+		/* Pour internet Explorer, un scroll bar s'invite dans le textarea, et donc je le ainsi:*/
+		overflow: hidden;
+}
+.rappel  { /* modifier_.php */
+
+		 position:relative;
+		 text-align:left;
+		 padding:1em;
+		 line-height:1.1;
+		 overflow:hidden;
+		 
+	
+}
+.centrer
+{
+  position: absolute;
+    left: 400px; 
+    top:52px;
+	text-align:center;
+}
+
+.tablegauche, .tablemenu{
+  position:relative; padding:5%; margin:0; border-radius:0; text-align:center; min-height:22.5em; 
+  /* box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47; */
+  box-shadow: 0 0 65px #cdbe9f inset;
+  
+  
+}
+/*acueil.php ? ecritureBD.php , ecritureBD.php */
+.tabledroite { 
+	position:relative; padding:5%; margin:0; border-radius:0; min-height:33.5em; 
+	/* box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;  */
+	
+	  background: #ECECEA;
+}
+
+.listemenu{ line-height: 1.8; }
+.nouveaudocument , .listdocument { display:block; float:left; margin-left:20px; }
+.nouveaudocument { border-bottom: outset 0px #e5eecc; }
+
+input#nouveaudocument , #listdocument  { background-color:#e5eecc; }
+
+input#nouveaudocument:hover , #listdocument:hover  { 
+            color:green ; 
+		    padding-top:1%; padding-bottom:1%; 
+			background-color: #cdbe7f;  position:relative; 
+            border-radius:2px;
+			-webkit-border-radius:2px;
+			-moz-border-radius:2px;
+			-khtml-border-radius:2px;
+			
+            /* box-shadow:
+                0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+                0px 2px 2px 0px rgba(255, 255, 255, 0.5); */
+				
+} 
+
+
+div#commandePanel {height:30px;}
+
+
+.line1 {
+		background: inherit; /* #e5eecc;  #1D702D; */ 
+
+		border-radius:20px;
+		box-shadow:
+		0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+		0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+.line2 {
+background: inherit; /* #e5eecc;  #1D702D; */ 
+
+border-radius:20px;
+/* box-shadow:
+0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset; */
+
+}
+
+
+  
+	
+	
