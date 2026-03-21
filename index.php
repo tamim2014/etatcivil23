@@ -1,65 +1,83 @@
 
-
-<!DOCTYPE html>
-<html>
-<head>
- <meta charset="utf-8"> <!-- sinon tu peux pas écrire N° ni les accent-->
- <title> Authentification officier de l'etat civil</title>
- <link href="css/accueil.css" rel="stylesheet" title="Style" />
-
- <style>
-      * { box-sizing: border-box; }	
-       body {  margin:0; overflow-x: hidden ; }
-	  .tablegauche{ left:-18.938em;  top:4.563em;  height:24.813em;                     width:17.5em; right:12.5em; }
-	  .tablecentre{ left:0;          top:-1em;    height:37.875em; width:12.5em;    padding-top: 3.438em; border-radius:10px 0 0 10px; z-index:3;}
-	  .tabledroite{ left:12.5em;     top:-1em;    height:37.875em; width:23.125em;  border-radius:0 10px 10px 0;}
-      .closeLowerMargin , .openLowerMargin {left:5%; width:89%;} 
- </style>
-</head>
-
-<body>
-<!-- ARRIERE-PLAN -->
-
-<table class="closeLowerMargin "  style="background-color:#1D702D;  top:-360px; z-index:2;  border-radius:20px;"><tr><td>  </td></tr></table> 
-<table class="openLowerMargin "  style="background-color:#1D702D;   "><tr><td>  </td></tr></table> <!-- รงa rempli les vide de l\'interface -->
-
-
-<div class="centrer"  >
-
-	<form action ="" method="post" name="form1" >
-		<!-- PANNEAU DE GAUCHE -->
-		<table class="tablegauche" > <caption  style="caption-side:top;"> <font color="#FFFFFF"><h3> UNION DES COMORES  </h3><h6> Unit&eacute;-Solidarit&eacute;-D&eacute;veloppement  </h6><h4> MINISTERE DE L'INTERIEUR  </h4></font><img src="img/armoirie.png"  /></caption>
-			 <tr>   <td>AUTHENTIFICATION</td></tr>
-			 <tr>   <td> Login    <br/>  <input  type="text"   id="login_"   name="pseudo_" > </td></tr> 
-			 <tr><td> Mot de passe <br/>  <input  type="text"  id="pswd_"    name="motdepasse_" > </td></tr>
-			 <tr><td>
-				 <textarea class="t_area" name="myTextBox" cols="18" rows="4" style="background-color:#1D702D;   color:#ffffff;"   > Veuillez saisir vos identifiants</textarea><br/>
-				 <input id="valider_" type="submit" class="submit" value="Valider"   name="envoie" style=" font-weight:bold;  background-color: #ffffff; height: 20px; "  />
-			 </td></tr>
-		 </table>
-		 
-		<!-- PANNEAU CENTRAL --> 
-		<table  class="tablecentre" ><caption style="caption-side:top"> <font color="#FFFFFF"><h3> OFFICE   </h3></caption>
-		 <tr><td><input type=image src=img/carte.jpg align="center"/></td></tr>
-		</table>
-
-		<!-- PANNEAU DE DROITE -->
-		<table  class="tabledroite" ><caption style="caption-side:top"> <font color="#FFFFFF"><h3> D'ETAT CIVIL  </h3></caption>
-		 <tr><td>Apr&egrave;s 3 essais erron&eacute;es,<br> l'acc&egrave;s au systeme est restreint par mesure de s&eacute;curit&eacute;.<br>L'officier d'&eacute;tat civil doit contacter l'administrateur syst&egrave;me.</td></tr>
-		</table>
-
-	</form>
-
-</div>
-
-</body>
-</html>
 <?php include("SERVEUR/authentification.php "); ?>
 
 
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil </title>
+	<link href="css/template.css"  rel="stylesheet" type="text/css" >
+	<link href="css/accueil22.css" rel="stylesheet"   />
+    <link href="css/slide.css"     rel="stylesheet"   />
+	<link href="css/dropdown.css"  rel="stylesheet"    />
+
+	<script src="js/jquery.js"></script>
+</head>
+
+<body >
+    <header>
+		<div class="en-tete">
+			<div class="hollowTop"   >				   
+			   <input type=image src="img/drapeau.png" align="left" class="flag" style="width:30%; height:100%; filter:brightness(80%);" />
+			   <p class="text_header" style="padding-top:2%; padding-left:45%;">OFFICE    D'&Eacute;TAT CIVIL </p>			  
+			</div> 
+		</div>		
+		<div class="menu topnav"  id="myTopnav"> 
+			   <?php include("inc/accueil/accueil_menucentral_login.php");   ?>
+		</div>
+    </header>
+    <div class="contenu" style="margin-bottom:0;">
+	    <form action ="" method="POST" name="form1" >
+			<!-- LE PANNEAU DE GAUCHE : Recher des document par numero ou nom -->
+			<div class="colonne_laterale" style=" margin-bottom:0; padding-bottom:0; height:auto;">
+				<aside style="padding:0; margin-bottom:0; background: #ECECEA ; " >
+					<table class="tablegauche" style="margin-bottom:0; padding-bottom:0; height:24em; box-shadow: none; border:1px solid #c4c4c4; border-bottom:none; background: #ECECEA ;"  > 
+					    <!-- <caption  style="caption-side:top; box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;  ">  -->
+						<caption  style="caption-side:top; box-shadow: 0 20px 65px #cdbe9f outset; border:1px solid #c4c4c4; border-top:none; background: #ECECEA; margin-bottom:1em;"> 
+						    <font color="gray" style="line-height:2;">
+								 <h3> UNION DES COMORES  </h3>
+								 <h6> Unit&eacute;-Solidarit&eacute;-D&eacute;veloppement  </h6>
+								 <h4> MINISTERE DE L'INTERIEUR  </h4>
+							 </font>
+							 <!-- <img src="img/armoirie.png" style="z-index:3; transform: translate(200%, 0);  "  /> -->
+							  <img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; margin-bottom:1%; width:20%;  "  />
+						      
+							</caption>
+						 <tr > <td >AUTHENTIFICATION</td></tr>
+						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input  type="text"   id="login_"    name="pseudo_"    style="background:#ddd; "> </td></tr> 
+						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input  type="password"  id="pswd_"     name="motdepasse_" style="background:#ddd;"> </td></tr>
+						 <tr><td style="padding-top:1em;">
+							 <textarea class="t_area" name="myTextBox" cols="18" rows="4"> Veuillez saisir vos identifiants </textarea>
+						 <br/><input id="valider_" type="submit" class="submit" value="Valider"   name="envoie"  style="background: #ECECEA ; color:#111; padding:.3em 3.3em; margin:1em auto; border-radius:4px; " />
+						 </td></tr>
+					</table>					 
+				</aside>
+			</div>
+			<!-- LE PANNEAU DE DROITE : Recher des document par liste déroulante -->
+			<div class="colonne_contenu" style="padding:0;">
+				<aside>
+					<table  class="tabledroite" >
+			             <tr>
+							<td class="listemenu"> 
+								  <!-- mettre une video ici pour montrer comment utiliser l'application -->
+							</td>
+						</tr> 
+		            </table>
+				</aside>
+			</div>
+		</form>
+    </div>     
+    <div class="footer" style="margin-top:0; padding-top:0; ">
+        Pied de Page
+    </div>
+</body>
+</html>
 
 
 
 
 
+ 
 
