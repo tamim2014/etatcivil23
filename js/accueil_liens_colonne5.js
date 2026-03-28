@@ -38,7 +38,9 @@
 				instanceXMLHttpRequest();
                 xmlhttp.onreadystatechange = function() { if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { document.getElementById("panel").innerHTML = xmlhttp.responseText;}};
                 //xmlhttp.open("GET","SERVEUR/accueil_imprimer_acte.php?print_="+str,true);
+				//xmlhttp.open("GET","imprimer.php?print_="+str,true);
 				xmlhttp.open("GET","SERVEUR/accueil_imprimer_acte.php",true);
+				
                 xmlhttp.send();
             }
         }
