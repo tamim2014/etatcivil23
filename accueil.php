@@ -43,7 +43,7 @@ try {
 		}else{
 		 // --- enregistrement en session du numéro
 			$_SESSION["acte"] = $numero;
-		 // --- redirection en fonction de l'utilisateur
+		 // --- redirection vers la page d'affichage
 			header("Location: lectureBD2.php?num=".$numero );
 		}
 	}
@@ -68,7 +68,7 @@ try {
 		}else{
 		 // --- enregistrement en session du nom
 			$_SESSION["nom"]=$nomm;
-		 // --- redirection en fonction de l'utilisateur
+		 // --- redirection vers la page d'affichage
 			header("Location: lectureBD2.php?nom=".$nomm );
 		}
 	}
@@ -162,8 +162,8 @@ try {
 							  <img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; width:20%;  "  />
 						 </caption>
 						 <tr> <td >RECHERCHE DE DOCUMENT</td></tr>
-						 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> num&eacute;ro<br/> <input id="recherchenum" type="text" name="acte_" pattern=".{1,}"  > </td></tr> 
-						 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> nom    <br/>       <input id="recherchenom" type="text" name="nom_"  > </td></tr>
+						 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> number<br/> <input id="recherchenum" type="text" name="acte_" pattern=".{1,}"  > </td></tr> 
+						 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> name    <br/>       <input id="recherchenom" type="text" name="nom_"  > </td></tr>
 						 <tr><td style="padding-top:1em;">
 							 <textarea class="t_area" name="myTextBox" cols="18" rows="4"> <?php echo $message ; ?> </textarea>
 						 <br/><input type="submit" name="envoie" value="Chercher"  style="background:transparent ; color:#111; padding:.3em 3.3em; margin:1em auto; " />
