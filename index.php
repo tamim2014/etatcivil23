@@ -23,8 +23,39 @@
             box-shadow:
                           0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
                            0px 2px 2px 0px rgba(255, 255, 255, 0.5);
-		    }			
+		    			
 		}
+		
+		/* Essai Responsive viewport: D'abord virer le scrol */ 
+		
+		body{ margin:0;	  padding:0; }		
+		.tablegauche, .tabledroite{
+			margin:0; padding:0;						
+			min-height:42vh; /* 42vh */
+		}
+		.contenu {
+			min-width:98%;
+            margin:0 auto;
+        }
+		.contenu, .colonne_laterale, .colonne_contenu{
+			background:inherit;	
+            min-height:66vh; /* 66vh */
+		}
+       .colonne_laterale{ width:30%;}
+	   .colonne_contenu{ width:70%; }
+	   
+	   /* fixer le footer */
+	     body{ 
+			 display:flex;	  
+			 flex-direction:column;
+			 min-height:100vh;
+			 width:100%;
+			 
+		 }
+         .contenu {
+           flex:1;
+		   
+         }		 
 	</style>
 
 
@@ -48,7 +79,7 @@
 			<!-- LE PANNEAU DE GAUCHE : Recher des document par numero ou nom -->
 			<div class="colonne_laterale" style=" margin-bottom:0; padding-bottom:0; height:auto;">
 				<aside style="padding:0; margin-bottom:0; background: #ECECEA ; " >
-					<table class="tablegauche" style="margin-bottom:0; padding-bottom:0; height:24em; box-shadow: none; border:1px solid #c4c4c4; border-bottom:none; background: #ECECEA ;"  > 
+					<table class="tablegauche" style="margin-bottom:0; padding-bottom:0;  box-shadow: none; border:1px solid #c4c4c4; border-bottom:none; background: #ECECEA ;"  > 
 					    <!-- <caption  style="caption-side:top; box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;  ">  -->
 						<caption  style="caption-side:top; box-shadow: 0 20px 65px #cdbe9f outset; border:1px solid #c4c4c4; border-top:none; background: #ECECEA; margin-bottom:1em;"> 
 						    <font color="gray" style="line-height:2;">
@@ -63,25 +94,30 @@
 						 <tr > <td >AUTHENTIFICATION</td></tr>
 						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input  type="text"   id="login_"    name="pseudo_"    style="background:#ddd; "> </td></tr> 
 						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input  type="password"  id="pswd_"     name="motdepasse_" style="background:#ddd;"> </td></tr>
-						 <tr><td style="padding-top:1em;">
+						 <tr ><td style="padding-top:1em; ">
 							 <textarea class="t_area" name="myTextBox" cols="18" rows="4"> Veuillez saisir vos identifiants </textarea>
-						 <br/><input id="valider_" type="submit" class="submit btnHover" value="Valider"   name="envoie"  style="background: #ECECEA ; color:#111; padding:.3em 3.3em; margin:1em auto; border-radius:4px; " />
+						 <br/><input id="valider_" type="submit" class="submit btnHover" value="Valider"   name="envoie"  style="background: #ECECEA ; color:#111; padding:.3em 3.3em 0; margin:1em auto 0; border-radius:4px; " />
 						 </td></tr>
 					</table>					 
 				</aside>
 			</div>
 			<!-- LE PANNEAU DE DROITE : Recher des document par liste déroulante -->
-			<div class="colonne_contenu" style="padding:0;">
+			<div class="colonne_contenu" style="padding:0; margin-bottom:0; ">
+			    <!--
 				<aside>
 					<table  class="tabledroite" >
 			             <tr>
-							<td class="listemenu"> 
-								  <!-- mettre une video ici pour montrer comment utiliser l'application -->
+							<td class="listemenu">
+								   mettre une video ici pour montrer comment utiliser l'application 
 							</td>
 						</tr> 
 		            </table>
+					777
 				</aside>
+				-->
+				
 			</div>
+			
 		</form>
     </div>     
     <div class="footer" style="text-align:left; ">
