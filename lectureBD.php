@@ -14,6 +14,14 @@
 	 <link href="css/dropdown.css"  rel="stylesheet"    />
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />
 	 <link href="css/accordeon2.css" rel="stylesheet" /> <!-- Exclusivement sur cette page!  -->
+	 <!-- Resserer les champs des checkbox (Imprimer, Afficher)  voir SERVEUR/lectureBD_afficherNaissance.php -->
+	 <style>
+
+
+
+		
+	 </style>
+
 	 
 	 
 	 <script src="js/jquery.js"></script>
@@ -50,7 +58,7 @@
 					     <img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; width:20%;  "  />
 					 </caption>
 					 <tr ><td style="padding-top:0; padding-bottom:8em; margin-top:0; ">
-						 <!-- Suppression menu personnalisé(Remplacé par menus de l'accrdéon du topnav) -->  
+						 <!-- Suppression menu personnalisé(Remplacé par menus de l'accordéon du topnav) -->  
 						 <!-- include("inc/lecture/menugauche.php"); -->  
 					 </td></tr>
 				</table>

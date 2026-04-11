@@ -16,19 +16,19 @@
 			<div id="aside"  > 
 				<ul class="navigation"  >	
 					<li class="toggleSubMenu"> <span >Grande-Comores</span>
-						<ul class="subMenu"  style="color:silver;" >
-						  <li><a href="#" >Moroni-Bambao</a></li>
-						  <li><a href="#" >Hambou</a></li>
-						  <li><a href="#" >Mbadjini-Ouest</a></li>
-						  <li><a href="#" >Mbadjini-Est</a></li>
-						  <li><a href="#" >Oichili</a></li>
-						  <li><a href="#" >Hamahamet-Mboinkou</a></li>
-						  <li><a href="#" >Mitsamihouli-Mboudé</a></li>
-						  <li><a href="#" >Itsandra-Hamanvou</a></li>
+						<ul class="subMenu">
+						  <li><a href="#" class="island1">Moroni-Bambao</a></li>
+						  <li><a href="#" class="island1">Hambou</a></li>
+						  <li><a href="#" class="island1">Mbadjini-Ouest</a></li>
+						  <li><a href="#" class="island1">Mbadjini-Est</a></li>
+						  <li><a href="#" class="island1">Oichili</a></li>
+						  <li><a href="#" class="island1">Hamahamet-Mboinkou</a></li>
+						  <li><a href="#" class="island1">Mitsamihouli-Mboudé</a></li>
+						  <li><a href="#" class="island1">Itsandra-Hamanvou</a></li>
 						</ul>
 					</li>				
 					<li class="toggleSubMenu"><span>Anjouan</span>
-						  <ul class="subMenu"  style="color:silver;" >						
+						  <ul class="subMenu">						
 							<li><a href="#" class="island1">Mutsamudu</a></li>
 							<li><a href="#" class="island1">Oini</a></li>
 							<li><a href="#" class="island1">Domoni</a></li>
@@ -36,7 +36,7 @@
 						  </ul>
 					</li>
 					<li class="toggleSubMenu"><span>Moheli</span>
-						  <ul class="subMenu"  style="color:silver;" >						
+						  <ul class="subMenu" >						
 							<li><a href="#" class="island1">Fomboni</a></li>
 							<li><a href="#" class="island1">Nioumachoua</a></li>
 							<li><a href="#" class="island1">Djando</a></li>

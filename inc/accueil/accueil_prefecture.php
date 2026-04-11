@@ -5,7 +5,12 @@
 
     <meta charset="utf-8">   
      <title> </title>
-	 
+	 <!-- 
+	       Mais ce n'est pas logique ! 
+		   Il y a des dépendances qui sont appelées dans la pages sources:accueil.php
+		   i fo les virer ici, les mettre dans accueil.php et tester
+	 -->
+		   
 	 <script src="js/jquery.js"></script>
 	 <script src="js/capture_items.js"></script>    <!--    <script src="js/acteOutSlide.js"></script> -->
 	 <script src="js/accueil_liens_colonne5.js"></script>
