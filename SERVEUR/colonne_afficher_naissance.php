@@ -9,7 +9,7 @@
 // NOUS SOMMES CÔTE SERVEUR
 session_start();
 //Défintion des varibles: ATTENTION "  LE FAIRE TOUJOURS AVANT LA CONNEXION"
-if(!isset($_GET["p"]))$_GET["p"]=""; 
+if(!isset($_GET["p"])) $_GET["p"]=""; 
 $p = $_GET['p']; // Réception de la prefecture transmis par la fonction AJAX showActeLinkSlide(str) . str est chaine de caractere qui désigne la préfecture choisie par l'utilistateur
 
 //1.Connexion
@@ -21,9 +21,19 @@ $R=mysqli_query($conn, "SELECT * FROM  liste WHERE prefecture='".$p."' ") or exi
 $table='<table class="couleurPoliceTable">'; 
 $table.='<tr ><th>Nom</th><th> Prenom </th><th> Numero </th><th>Prefecture</th><th style="border-radius:8px 0 8px 8px;"></th> <tr>';
 while($ligne=mysqli_fetch_array($R)){// en utlisant FOREACH ça marche pas .j'sais pas pourquoi
-    $table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td> <td  > <a href="afficher.php?n='.$ligne["ID"].'"     onclick=" window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 \'); return false;" >Afficher</a> </td></tr>';
-   // $table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td> <td  > <a href="#"   onclick="popup_lectureBD2();" >Afficher</a> </td></tr>';
-  
+  //$table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td> <td><a href="afficher.php?n='.$ligne["ID"].'"  onclick="window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 \'); return false;">Afficher</a></td></tr>';
+  // Remplacer afficher.php par afficherdanspop.php(qui est déjà formaté)
+  $table .= '<tr>
+  <td>'.$ligne["nom"].'</td>
+  <td>'.$ligne["prenom"].'</td>
+  <td>'.$ligne["acte"].'</td>
+  <td>'.$ligne["prefecture"].'</td>
+  <td>
+    <a href="afficher.php?n='.$ligne["ID"].'" onclick="return ouvrePop(this.href);">
+        Afficher
+    </a>
+  </td>
+  </tr>';
   $_SESSION["v"]= $p; // stocke la prefecture pour la transmettre à la page rectifier naissance.php suite à un éventuel clic sur le bouton rectifier
    // $_SESSION['identifiant']= $ligne['ID']; // pour l'affichage du document. Voir afficherdanspop.php( don include pop.php)
 }

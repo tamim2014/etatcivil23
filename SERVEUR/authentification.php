@@ -44,7 +44,7 @@ session_start();
 		} else {
 
 			$_SESSION["pseudo"] = $row["pseudo"];
-			$_SESSION["user_role"] = $row["user"];  // <-- maintenant ça marche
+			$_SESSION["user_role"] = $row["user"];  
 
 			header("Location: accueil.php");
 			exit;

@@ -84,17 +84,11 @@ try {
 	<link href="css/accueil22.css" rel="stylesheet"   />
     <link href="css/slide.css"     rel="stylesheet"   />
 	<link href="css/dropdown.css"  rel="stylesheet"    />
-    <!-- ✅ Pour les messages - Boite de dialogue -->
-	<style>
-	 /*
-		#dialogMessage {
-			white-space: normal;
-		}
-	 */
-    </style>
+    <!-- ✅ Pour les messages - Boite de dialogue et les Popup -->
 	<script src="js/dialogueBox.js"></script>
 	<!-- ✅ Ouverture du panel -->
 	<script src="js/jquery.js"></script>
+
 	<!--
 	    1.OBJET:   Affichage de document dans la page d'accueil(via 1 popup)
 	    2.CIBLE:   SERVEUR/colonne_afficher_naissance.php

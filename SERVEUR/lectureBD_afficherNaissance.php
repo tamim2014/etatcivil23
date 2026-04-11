@@ -43,7 +43,7 @@ $reponse = $requete; // déjà exécutée ( avec la reqête préparée, pas beso
 
 //3.1 On construit une table d'affichage
 $table='<table class="couleurPoliceTable" >'; 
-$table.='<tr><th>Nom </th><th> Prenom </th><th> Numéro </th><th> Prefecture </th><th></th><th style="border-radius:8px 0 8px 8px;"></th> <tr>';
+$table.='<tr class="tetetable" ><th>Nom </th><th> Prenom </th><th> Numéro </th><th> Prefecture </th><th>Imprimer</th><th style="border-radius:8px 0 8px 8px;">Afficher</th> <tr>';
 while($ligne = $reponse->fetch()){// en utlisant FOREACH ça marche pas .j'sais pas pourquoi
  /**
     LecturBD.php/lectureBD_afficherNaissance.php: On affiche plus de document via "afficher.php" .
@@ -56,10 +56,26 @@ while($ligne = $reponse->fetch()){// en utlisant FOREACH ça marche pas .j'sais 
       Ne pas utiliser une variable session
       Donc revenir sur le fichier afficher.php et prendre le temps de le formater	  
  */
- // TASK: il faut mettre le popup dans une fonction
- $table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td><td><a href="imprimer.php?n='.$ligne["ID"].'">Imprimer</a></td><td><a href="afficher.php?n='.$ligne["ID"].'" onclick=" window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 \'); return false;">Afficher</a></td></tr>';
- // $table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td> <td><a href="#">Imprimer</a></td> <td> <a class="btnPopup" href="afficher.php?n='.$ligne["ID"].'">Afficher</a> </td></tr>';
  
+ //$table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td><td><a href="imprimer.php?n='.$ligne["ID"].'">Imprimer</a></td><td><a href="afficher.php?n='.$ligne["ID"].'" onclick=" window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 \'); return false;">Afficher</a></td></tr>';
+ //👉 TASK1: il faut mettre le popup dans une fonction ( J'ai mis la fonction dans ⚠️js/capture_items.js⚠️)
+ //$table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td><td><a href="imprimer.php?n='.$ligne["ID"].'">Imprimer</a></td><td><a href="afficher.php?n='.$ligne["ID"].'" onclick="return ouvrePop(this.href);">Afficher</a></td></tr>';
+ //👉 TASK2: Remplacer les liens "Imprimer" et "Afficher" par des btn checkbox
+ $table .= '<tr>
+<td>'.$ligne["nom"].'</td>
+<td>'.$ligne["prenom"].'</td>
+<td>'.$ligne["acte"].'</td>
+<td>'.$ligne["prefecture"].'</td>
+
+<td>
+    <span class="icon-btn" onclick="window.location=\'imprimer.php?n='.$ligne['ID'].'\'">🖨️</span>
+</td>
+
+<td>
+    <span class="icon-btn" onclick="ouvrePop(\'afficher.php?n='.$ligne['ID'].'\')">👁️</span>
+</td>
+
+</tr>';
 
  }
 $table.='</table>';

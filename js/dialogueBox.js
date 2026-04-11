@@ -13,3 +13,13 @@ function showDialog(msg) {
 function closeDialog() {
 	document.getElementById("dialogBox").style.display = "none";
 }
+
+// Pour les popup de la page d'accueil (Panel->Afficher)
+function ouvrePop(url) {
+	window.open(
+		url,
+		'Popup',
+		'scrollbars=1,resizable=1,height=409,width=918,top=258,left=175'
+	);
+	return false;
+}
