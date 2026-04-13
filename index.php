@@ -12,6 +12,7 @@
 	<link href="css/accueil22.css" rel="stylesheet"   />
     <link href="css/slide.css"     rel="stylesheet"   />
 	<link href="css/dropdown.css"  rel="stylesheet"    />
+	
 	<style>
 	    .btnHover:hover{
 			padding-top:1%; padding-bottom:1%;
@@ -22,7 +23,7 @@
 			border-radius:2px;			
             box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5);
 		}
-		/* Test style flex: accueil.php */
+		
 		.colonne_laterale{
 			width:39.5%;
 		}
@@ -34,15 +35,55 @@
 			
 	    }
 	    .tablegauche tr td {  
-		   padding-left:1em;
+		   padding-left:2vw;
 		   padding-bottom:1em;
 		} 
-		.tablegauche tr td input{
-			width:300px;
+		
+		.tablegauche tr td input, textarea{
+			width:21vw !important;
+			max-width:300px;
 			padding:.4em;
 		}
+		textarea{
+			height:10vh;
+		}
+		input:focus,
+		textarea:focus {
+			outline: none !important;
+			border: none !important;
+		}
+
+		
+		input#login_, input#pswd_{
+			background:#ddd !important; /* impossible à changer ⚠️  j'sais pas pourquoi! */
+		}
+		 /* solution: Ecraser le input:-webkit-autofill */
+		
+		input:-webkit-autofill,
+		input:-webkit-autofill:focus {
+			background-color:#ddd !important;
+			-webkit-box-shadow: 0 0 0px 1000px #c4c4c4 inset !important;
+			box-shadow: 0 0 0px 1000px #ddd inset !important;
+			outside:none !important; /* ?????*/
+		}
+		input:-webkit-autofill:hover {
+			background-color: #cdbe7f  !important; 
+			-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5) !important;
+			box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5) !important;
+		}
+
 		
 		
+		
+		
+		
+		
+
+		
+		/*
+		#login_:hover , #pswd_:hover  { background-color:white !important; color:#ffffff; font-size: 17px; font-weight:bold;    box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5); }
+        #valider_:hover { color: #1D702D;   font-style: italic;}
+        */
 
 	   
 	   /* Nouvelle façon de fixer le footer */
@@ -90,10 +131,10 @@
 						      
 							</caption>
 						 <tr > <td >AUTHENTIFICATION</td></tr>
-						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input  type="text"   id="login_"    name="pseudo_"    style="background:#ddd; "> </td></tr> 
-						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input  type="password"  id="pswd_"     name="motdepasse_" style="background:#ddd;"> </td></tr>
+						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input  type="text"   id="login_"    name="pseudo_" > </td></tr> 
+						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input  type="password"  id="pswd_"     name="motdepasse_"> </td></tr>
 						 <tr ><td style="padding-top:1em;">
-							 <textarea style="font-size:1em; " class="t_area" name="myTextBox" cols="34" rows="4"> Veuillez saisir vos identifiants </textarea>
+							 <textarea style="font-size:1em; " class="t_area" name="myTextBox"> Veuillez saisir vos identifiants </textarea>
 						 <br/><input id="valider_" type="submit" class="submit btnHover" value="Valider"   name="envoie"  style="background: #ECECEA ; color:#111; padding:.3em 3.3em; margin:1em auto 0; border-radius:4px; " />
 						 </td></tr>
 					</table>					 

@@ -1,6 +1,6 @@
 ﻿<?php
- echo '
-    <table class="tablegauche"  name="listes" style="margin:0 !important;"  > 
+  echo ' 
+  <table class="tablegauche"  name="listes" style="margin:0 !important;"> 
 	  <caption  style="caption-side:top; box-shadow: 0 40px 65px #cdbe9f inset; "> 
 		<font color="gray" style="line-height:2;">
 			<h3> UNION DES COMORES  </h3>
@@ -74,8 +74,7 @@
 	 <tr><td> Le  </td> <td> <input type="date" name="delivre_le" required></td></tr>
 	 <tr><td> L\'an  </td> <td> <input type="text" name="delivre_an"> </td></tr>
 	 <tr><td > S&eacute;rie N°:  </td> <td> <input type="text" name="num_serie" required></td></tr>
- </table>
-  
+ </table> 
 ';
  
 ?>

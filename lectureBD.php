@@ -14,12 +14,13 @@
 	 <link href="css/dropdown.css"  rel="stylesheet"    />
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />
 	 <link href="css/accordeon2.css" rel="stylesheet" /> <!-- Exclusivement sur cette page!  -->
-	 <!-- Resserer les champs des checkbox (Imprimer, Afficher)  voir SERVEUR/lectureBD_afficherNaissance.php -->
 	 <style>
-
-
-
-		
+       	.contenu{
+		    /* on ⚠️⚠️⚠️remplace float:left sur les contenus par display:flex sur le conteneur⚠️⚠️⚠️ */
+	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Attention. form est le parent des colones, pas .contenu ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
+	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
+	       display: flex;
+         }
 	 </style>
 
 	 
@@ -46,9 +47,9 @@
 
 	<div class="contenu" style="margin-bottom:0;"  >
 		<!-- LE PANNEAU DE GAUCHE :  -->
-		<div class="colonne_laterale" style=" margin-bottom:0; padding-bottom:0; height:auto;" >
+		<div class="colonne_laterale" >
 			<aside class="aside1">
-				<table class="tablegauche" style="margin-bottom:0; padding-bottom:0; height:25em;"> 
+				<table class="tablegauche" style=" height:25em;"> 
 				     <caption  style="caption-side:top; box-shadow: 0 20px 65px #cdbe9f inset;  "> 
 						<font color="gray" style="line-height:2;">
 							<h3> UNION DES COMORES  </h3>
