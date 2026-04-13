@@ -51,8 +51,15 @@
 			  
 		 }
 		.mnayvawo{
-		height:auto;
-	    }
+		   height:auto;
+	     }
+		 .contenu{
+		    /* on ⚠️⚠️⚠️remplace float:left sur les contenus par display:flex sur le conteneur⚠️⚠️⚠️ */
+	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Attention. form est le parent des colones, pas .contenu ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
+	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
+	       display: flex;
+         }
+
 	 </style>
 	 
 	 <script src="js/jquery.js"></script>
@@ -75,9 +82,9 @@
 
 	<div class="contenu" style="margin-bottom:0;"  >
 		<!-- LE PANNEAU DE GAUCHE :  -->
-		<div class="colonne_laterale" style=" margin-bottom:0; padding-bottom:0; height:auto;" >
+		<div class="colonne_laterale"  >
 			<aside class="aside1" >
-				<table class="tablegauche" style="margin-bottom:0; padding-bottom:0; height:25em;"> 
+				<table class="tablegauche" style="height:25em;"> 
 				     <caption  style="caption-side:top; box-shadow: 0 20px 65px #cdbe9f inset;  "> 
 						<font color="gray" style="line-height:2;">
 							<h3> UNION DES COMORES  </h3>

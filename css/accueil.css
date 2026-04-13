@@ -1,12 +1,12 @@
 /************************************************************************************ 
 
-Couleurs utilisées:
+Couleurs utilisï¿½es:
 
 - peru et silver(pour les BD)
 - #cdbe9f et #e5eecc(pour les background-color)
 - si ces ne ressortent pas les caracteres blancs: Utliser background-color: #99993F;
 ___________________________________________________
-Les préfixes vendeurs
+Les prï¿½fixes vendeurs
 -o- pour Opera
 -moz- pour Gecko (Mozilla)
 -webkit- pour Webkit (Chrome, Safari, Android...)
@@ -120,9 +120,9 @@ table.color_line tr:nth-child(2n+1) td {
 			  display: block;  
 			}
 
-/*  Reduction hauteur table d'affichage resultat(lectureBD2.php)suite à une action sur le moteur de recherche de la page d'accueil*/
+/*  Reduction hauteur table d'affichage resultat(lectureBD2.php)suite ï¿½ une action sur le moteur de recherche de la page d'accueil*/
 .color_line_short { position:absolute; z-index:2;  left:310px;  right:40px; top:114px;    height:60px; width:523px;   
-              /* Pour limiter lataille du conteneur overflow:  auto; sinon il va s'adapter à la taille du contenu */ 
+              /* Pour limiter lataille du conteneur overflow:  auto; sinon il va s'adapter ï¿½ la taille du contenu */ 
 			  background-color: #e5eecc;
 			  white-space:nowrap;
 			   
@@ -130,7 +130,7 @@ table.color_line tr:nth-child(2n+1) td {
 			  -moz-box-shadow: 1px 1px 0px 0px green;
 			  -webkit-box-shadow: 1px 1px 0px 0px green;
 			
-			  /* Pour adapter  la taille de la table à son div conteneur i fo retirer   display: block; */ 
+			  /* Pour adapter  la taille de la table ï¿½ son div conteneur i fo retirer   display: block; */ 
 			}
   
 input ,select {
@@ -196,14 +196,14 @@ button      {
 	text-align:center;
 }
 
-/****seulement pour Firefox et Netscape  mais ça marche pas ******************
-html:not([lang*=“”]) .centrer { position: absolute; top:48px; }  
+/****seulement pour Firefox et Netscape  mais ï¿½a marche pas ******************
+html:not([lang*=ï¿½ï¿½]) .centrer { position: absolute; top:48px; }  
 *****************************************************************************/
 
 /* support des panneaux - "les matelas" ou "les savons" ... tu les apl comme tu veux! */
 .tablegauche
 {
-   /* firefox a besoin d'un 'top:70px'.Contrairement à tous les autres browsers qui sont bien à73px. Solution? top:?*/
+   /* firefox a besoin d'un 'top:70px'.Contrairement ï¿½ tous les autres browsers qui sont bien ï¿½73px. Solution? top:?*/
 
   position:absolute; z-index:2; left:-200px;  top:73px;    right:200px; height:397px; width:280px; 
   box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;
@@ -268,7 +268,7 @@ html:not([lang*=“”]) .centrer { position: absolute; top:48px; }
 	}
 	
 
-.hollowTop  { /* EFFET CREUX */  /* sous le drapeau. càd contient le drapeau */ 
+.hollowTop  { /* EFFET CREUX */  /* sous le drapeau. cï¿½d contient le drapeau */ 
 			
 			background: silver; /* #e5eecc;  #1D702D; */ 
 			position:absolute; top:1px; left:165px;  margin:10px ;    padding:0px;   width:73%; height:75px;   
@@ -282,7 +282,7 @@ html:not([lang*=“”]) .centrer { position: absolute; top:48px; }
 
 }
 
-.closeUpperMargin  {  /* dessUs du drapeau. J'ai dépassé déliberement la margre haut de l'ecran */ 
+.closeUpperMargin  {  /* dessUs du drapeau. J'ai dï¿½passï¿½ dï¿½liberement la margre haut de l'ecran */ 
 			background: silver; /* #e5eecc;  #1D702D; */ 
 			position:absolute;  left:165px;  margin:10px;  width:73%; height:100px; /* ct height:415px; */
 			z-index:1;  top:-30px;
@@ -366,8 +366,7 @@ html:not([lang*=“”]) .centrer { position: absolute; top:48px; }
 		0px 2px 2px 0px rgba(0, 0, 0, 0.5),
 		0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
 }
-#login_:hover , #pswd_:hover  { background-color: #1D702D; color:#ffffff; font-size: 17px; font-weight:bold;    box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5); }
-#valider_:hover { color: #1D702D; font-weight:bold; font-size: 20px; font-style: italic;}
+
 #recherchenum, #recherchenom { background-color: #e5eecc; }
 #recherchenum:hover, #recherchenom:hover { background-color: #cdbe7f; color:green; font-size: 17px; font-weight:bold;  box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5);}
 
@@ -386,7 +385,7 @@ a.nouveaudocument:hover , .listdocument:hover { background-color: green; color:g
 
 /* 
    un effet creux sur les items menu central au survol de la souris
-   -> J'obtients plutôt un effet cube, mais je prends car je le trouve original
+   -> J'obtients plutï¿½t un effet cube, mais je prends car je le trouve original
    
  */
  
@@ -417,7 +416,7 @@ input#nouveaudocument:hover , #listdocument:hover  {
 div#commandePanel {height:30px;}
 
  
-//22.12.15 JE T'AIME MOI AUSSI(sab à konaté 0634251545)
+//22.12.15 JE T'AIME MOI AUSSI(sab ï¿½ konatï¿½ 0634251545)
 
 /*Styles de la page lectureBD_menu( appelee par le bouon Liste acte de naissance de la page d'accueil)*/
  
