@@ -186,17 +186,39 @@
 						 <tr> 
 							<td>
 								 <!-- recuperer  une veriable javascripte +actesaisi+  en php -->
-								<?php if(!isset($_POST["acte"])) $_POST["acte"]=""; $valeurphp= $_POST["acte"]; ?> <!-- +sieurs 10zaines de jour de galere!!! alors que la solution été si simple! Trouvé vend 25.09.16 à 16h50 à cité des sicience. shukran li l'ALLAH.   -->
-								<a id="acteAJAX" href="afficher2.php?n=<?php echo $valeurphp; ?>"   onclick="    window.open(this.href, 'Popup', 'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 '); return false; " >
+								<?php 
+								      //if(!isset($_SESSION['acte_saisi'])) $valeurphp= $_SESSION['acte_saisi'];   +sieurs 10zaines de jour de galere!!! alors que la solution été si simple! Trouvé vend 25.09.16 à 16h50 à cité des sicience. shukran li l'ALLAH.   
+								    $valeurphp = "";
+									if (!empty($_SESSION['acte_saisi'])) { // ✍️
+										$valeurphp = $_SESSION['acte_saisi'];
+									}
+								
+								?>
+								<a id="acteAJAX" href="afficher2.php?n=<?php echo $valeurphp; ?>"   onclick="  window.open(this.href, 'Popup', 'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 '); return false; " >
 									<input type="button"  value="Afficher l'acte" align="center"  style="background-color: #cdbe9f;"   />  
 								</a>
 							</td>
-							<?php if(!isset($donnees["ID"])) $donnees["ID"]=1;  ?>
-							<td> <a  href="afficher.php?n=<?php echo $donnees["ID"];?> "  ><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f;"/></a></td>
+							
+							<?php 
+							     //if(!isset($donnees["ID"])) $donnees["ID"]=1; 
+                                 $id_document = $_SESSION['id_document'] ?? "";
+                                 								 
+							?>
+							<td> <a  href="imprimer.php?n=<?php echo $id_document; ?> "  ><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f;"/></a></td>
 						 </tr>
 					</table>
+				    <?php
+					
+					
+					if (!empty($_SESSION['message'])) {
+						echo "<div style='color:green; text-align:center; font-weight:bold;'>".$_SESSION['message']."</div>";
+						unset($_SESSION['message']);
+					}
+					?>
+				
 				</aside>
-			</div>
+				
+			</div><!-- Fin PANNEAU CENTRALE -->
 			<!-- LE PANNEAU DE DROITE: -->
 			<div class="colonne_laterale" style="width: 25%; ">
 				<aside class="aside1">			    
@@ -207,7 +229,8 @@
 					</table>
             	</aside>
 			</div>
-		</form>
+		</form>	
+		
 	</div><!-- div.contenu -->
     <div class="footer" style="text-align:left; ">
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
