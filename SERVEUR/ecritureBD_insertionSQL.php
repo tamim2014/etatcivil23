@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 error_reporting(E_ALL);
 //1.les données saisie au formulaire sont directement stockées dans la table $_POST: donc on les recupere
 
@@ -49,7 +51,7 @@ require_once 'connection_PDO.php';
 $req=$conn->prepare('INSERT INTO liste(nom,prefecture,centretatcivil,registre,acte,date_acte,prenom,delivre_a,delivre_le,delivre_an,num_serie, naissance_jour_moi,naissance_an,naissance_heure,naissance_minuite, naissance_nom_prenom,naissance_lieu,naissance_sexe, pere_nom_prenom,pere_datenaisance,pere_lieunaissance,pere_profession,pere_villederesidence, mere_nom_prenom,mere_datenaisance,mere_lieunaissance,mere_profession, mere_villederesidenc, declaration_faite_par,declaration_recue_pa, datejugement ) 
                                VALUES(:nom, :prefecture, :centretatcivil, :registre, :acte, :date_acte, :prenom, :delivre_a, :delivre_le, :delivre_an, :num_serie, :naissance_jour_moi, :naissance_an, :naissance_heure, :naissance_minuite, :naissance_nom_prenom, :naissance_lieu, :naissance_sexe, :pere_nom_prenom, :pere_datenaisance, :pere_lieunaissance, :pere_profession, :pere_villederesidence, :mere_nom_prenom, :mere_datenaisance, :mere_lieunaissance, :mere_profession, :mere_villederesidenc, :declaration_faite_par, :declaration_recue_pa, :datejugement)');
 
-$req->execute(array(
+$resultat = $req->execute(array(
 	'nom' => $nom,
 	'prefecture' => $prefecture,
 	'centretatcivil' => $centretatcivil,
@@ -88,9 +90,36 @@ $req->execute(array(
 	'declaration_recue_pa' => $declaration_recue_pa,
 	'datejugement' => $datejugement
 	));
+	
+	$id = $conn->lastInsertId(); 
+	$_SESSION['id_document'] = $id;
+	
+	
 	$req->closeCursor(); 
 
-    header('Location: ../accueil.php');
+   // header('Location: ../accueil.php');
+   // On veut rester sur la page ecritureBD.php pour verifier la saisie, imprimer, .. .etc 
+   
+   
+
+
+   
+   
+   
+   
+ 
+   if ($resultat) {
+       $_SESSION['message'] = "Enregistrement effectué avec succès.";
+	   $_SESSION['acte_saisi'] = $acte;
+	 //  $id = $conn->lastInsertId();
+       $_SESSION['id_document'] = $id;
+	} else {
+	  $_SESSION['message']= "Erreur lors de l'enregistrement.";
+	}
+	
+   header('Location: ../ecritureBD.php');
+   exit;
+   
    
 ?>
 

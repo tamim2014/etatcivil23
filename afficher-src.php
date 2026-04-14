@@ -1,32 +1,23 @@
-<?php 
+<?php
 
+if(!isset($_GET['n'])) $_GET['n']=""; // Transmis par 'SERVEUR/colonne-afficher-naissance.php'
+$id=$_GET['n'];
+$id=ltrim($id);
+try{$conn = new PDO('mysql:host=localhost;dbname=etatcivil;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));} //// Le array active les exception PDO: pour obtenir + de détail sur d'eventuels erreurs
+catch(Exception $e){die('Erreur de connexion à la base de données: '.$e->getMessage());}
 
-
-if(!isset($_GET['n'])) $_GET['n']="";
-$acte=$_GET['n'];
-$acte=ltrim($acte);
-//try{$conn = new PDO('mysql:host=localhost;dbname=etatcivil;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));} //// Le array active les exception PDO: pour obtenir + de détail sur d'eventuels erreurs
-//catch(Exception $e){die('Erreur de connexion à la base de données: '.$e->getMessage());}
-require_once 'SERVEUR/connection_PDO.php';
-
-$reponse = $conn->query('SELECT * FROM liste WHERE acte='.$acte );
+$reponse = $conn->query('SELECT * FROM liste WHERE ID='.$id );
 $donnees = $reponse->fetch();
-/*
-$pdo = new PDO('mysql:host=example.com;dbname=database', 'user', 'password');
-$statement = $pdo->query("SELECT 'Bonjour, cher utilisateur de MySQL !' AS _message FROM DUAL");
-$row = $statement->fetch(PDO::FETCH_ASSOC);
-echo htmlentities($row['_message']);
-
-*/
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
      <meta charset="utf-8"> <!-- sinon tu peux pas écrire N° ni les accent-->
-     <title> Pop relatif à la page de saisie(ecritureBD.php)</title> 
+     <title>Recupere l'identifiant transmis et afffiche les données relatives dans un pop </title>
 	 <link href="css/afficher.css" rel="stylesheet" title="Style" />     
 </head>
+
 <body>
 <div id="wrap">
 
@@ -101,13 +92,13 @@ echo htmlentities($row['_message']);
 		  <br>---------------------------------------------------------------------------------<br>
 		  <input type="text"  style="margin-left:85px;"  value="<?php echo $donnees["datejugement"];?>"  >
 		  <br>---------------------------------------------------------------------------------<br>
-		  <input type="text"  style="margin-left:85px;"  value="<?php echo $donnees["emetteurjugement"];?>" maxlength="100" width="300px" >
+		  <input type="text"  style="margin-left:85px;"  value="" maxlength="100" width="300px" >
 		  <br>---------------------------------------------------------------------------------<br>
 		  
 		  <h4 align="center"> D&eacute;claration re&ccedil;ue le:</h4> 
 		  <input type="text"  style="margin-left:85px;" value="<?php echo $donnees["declaration_recue_pa"];?>" >
 		  <br>--------------------------------------------------------------------------------<br>
-		  <input type="text"  style="margin-left:85px;"  value="<?php echo $donnees["recepteurjugement"];?>" >
+		  <input type="text"  style="margin-left:85px;"  value="" >
 		  <br>--------------------------------------------------------------------------------<br>
 		  <br>--------------------------------------------------------------------------------<br><br>
 	    </div>
