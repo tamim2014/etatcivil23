@@ -183,7 +183,7 @@ try {
 							<td> <input type="text" name="delivre_an"  value="<?php echo $donnees["delivre_an"];?>" required > </td>
 						</tr>
 						<tr>
-						    <td> Série Num <br><br> </td>
+						    <td> Série Num: <br><br></td>
 							<td> <input type="text" name="num_serie" value="<?php echo $donnees["num_serie"];?>" required ><br><br></td>
 						</tr>
 					</table>
@@ -224,8 +224,8 @@ try {
 							 <tr> <td> <input type="text" name="declaration_recue_pa"  value="<?php echo $donnees["declaration_recue_pa"];?>" placeholder=" re&ccedil;ue par"  > </td></tr>
 						 </p>
 						 <tr> 
-							 <td><a id="acteAJAX" href="afficher.php?n=<?php echo $donnees["ID"];?> "   onclick=" window.open(this.href, 'Popup', 'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 '); return false; "     ><input type="button"  value="Afficher l'acte" align="center"  style="background-color: #cdbe9f;"   /></a></td>
-							 <td><a href="imprimer.php?n=<?php echo $donnees["ID"];?> "><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f;"/></a></td>
+							 <td><a id="acteAJAX" href="afficher.php?n=<?php echo $donnees["ID"];?> "   onclick=" window.open(this.href, 'Popup', 'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 '); return false; " ><input type="button"  value="Afficher l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em;" /></a></td>
+							 <td><a href="imprimer.php?n=<?php echo $donnees["ID"];?> "><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em;"/></a></td>
 						 </tr>
 					</table>
 			    </aside>

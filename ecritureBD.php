@@ -49,7 +49,7 @@
 		</div>
     </header>
 	<div class="contenu" style="margin-bottom:0;">
-		<form action ="SERVEUR/ecritureBD_insertionSQL.php" method="post" name="form1"  >
+		<form action ="SERVEUR/ecritureBD_insertionSQL.php" method="post" name="form1" >
 			<!-- LE PANNEAU DE GAUCHE :  -->
 			<div class="colonne_laterale" style="width: 33%;  " >
 				<aside class="aside1" style="padding:0 !important;  " >			    
@@ -64,10 +64,8 @@
 							<img src="img/armoirie.png"  style="z-index:3;   margin-left:40%; margin-right:40%; width:20%; "  />
 						 </caption>	  
 						 <tr>
-						   <td> 
-								 Pr&eacute;fecture:  
-						   </td> 
-						   <td>  
+						   <td><br> Pr&eacute;fecture: </td>
+						   <td><br>  
 								<select  name="prefecture"  onChange="changement(this)"  >
 									 <optgroup label="Ngazidja"> 
 									 <option> </option>
@@ -126,8 +124,8 @@
 						 <tr><td> </td><td><font color="##1D702D"> <b>Pour acte certifi&eacute; </b></font></td></tr>
 						 <tr><td> D&eacute;livr&eacute; &agrave; </td> <td> <input type="text" name="delivre_a" required></td></tr>
 						 <tr><td> Le  </td> <td> <input type="date" name="delivre_le" required></td></tr>
-						 <tr><td> L\'an  </td> <td> <input type="text" name="delivre_an"> </td></tr>
-						 <tr><td > S&eacute;rie N°:  </td> <td> <input type="text" name="num_serie" required></td></tr>
+						 <tr><td> L'an  </td> <td> <input type="text" name="delivre_an"> </td></tr>
+						 <tr><td > S&eacute;rie Num:  <br><br></td> <td> <input type="text" name="num_serie" required><br><br></td></tr>
 					 </table> 
 
                 </aside>
@@ -187,35 +185,30 @@
 							<td>
 								 <!-- recuperer  une veriable javascripte +actesaisi+  en php -->
 								<?php 
-								      //if(!isset($_SESSION['acte_saisi'])) $valeurphp= $_SESSION['acte_saisi'];   +sieurs 10zaines de jour de galere!!! alors que la solution été si simple! Trouvé vend 25.09.16 à 16h50 à cité des sicience. shukran li l'ALLAH.   
+								    //if(!isset($_SESSION['acte_saisi'])) $valeurphp= $_SESSION['acte_saisi'];   +sieurs 10zaines de jour de galere!!! alors que la solution été si simple! Trouvé vend 25.09.16 à 16h50 à cité des sicience. shukran li l'ALLAH.   
 								    $valeurphp = "";
-									if (!empty($_SESSION['acte_saisi'])) { // ✍️
-										$valeurphp = $_SESSION['acte_saisi'];
+									if (!empty($_SESSION['acte_saisi'])) { 
+										$valeurphp = $_SESSION['acte_saisi']; // 🎁
 									}
-								
 								?>
 								<a id="acteAJAX" href="afficher2.php?n=<?php echo $valeurphp; ?>"   onclick="  window.open(this.href, 'Popup', 'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 '); return false; " >
-									<input type="button"  value="Afficher l'acte" align="center"  style="background-color: #cdbe9f;"   />  
+									<input type="button"  value="Afficher l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em;" />  
 								</a>
 							</td>
 							
-							<?php 
-							     //if(!isset($donnees["ID"])) $donnees["ID"]=1; 
-                                 $id_document = $_SESSION['id_document'] ?? "";
-                                 								 
-							?>
-							<td> <a  href="imprimer.php?n=<?php echo $id_document; ?> "  ><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f;"/></a></td>
+							    <?php 
+							        //if(!isset($donnees["ID"])) $donnees["ID"]=1; 
+                                    $id_document = $_SESSION['id_document'] ?? ""; // 🎁
+							    ?>
+							<td> <a  href="imprimer.php?n=<?php echo $id_document; ?> "  ><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em; "/></a></td>
 						 </tr>
 					</table>
 				    <?php
-					
-					
-					if (!empty($_SESSION['message'])) {
-						echo "<div style='color:green; text-align:center; font-weight:bold;'>".$_SESSION['message']."</div>";
-						unset($_SESSION['message']);
-					}
+					    if (!empty($_SESSION['message'])) {
+						    echo "<div style='color:green; text-align:center; font-weight:bold;'>".$_SESSION['message']."</div>";
+						    unset($_SESSION['message']);
+					    }
 					?>
-				
 				</aside>
 				
 			</div><!-- Fin PANNEAU CENTRALE -->

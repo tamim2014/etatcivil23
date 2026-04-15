@@ -91,30 +91,20 @@ $resultat = $req->execute(array(
 	'datejugement' => $datejugement
 	));
 	
-	$id = $conn->lastInsertId(); 
-	$_SESSION['id_document'] = $id;
-	
+	$id = $conn->lastInsertId(); //⚠
+	$_SESSION['id_document'] = $id;   // 🎁 pour l'impression
+	$_SESSION['acte_saisi'] = $acte; //  🎁 pour l'affichage
 	
 	$req->closeCursor(); 
 
    // header('Location: ../accueil.php');
-   // On veut rester sur la page ecritureBD.php pour verifier la saisie, imprimer, .. .etc 
+   // On retourne à la page ecritureBD.php pour pouvoir verifier la saisie, imprimer, ... etc 
+   // et avant tout y afficher le message de confirmation suivante:
    
-   
-
-
-   
-   
-   
-   
- 
-   if ($resultat) {
-       $_SESSION['message'] = "Enregistrement effectué avec succès.";
-	   $_SESSION['acte_saisi'] = $acte;
-	 //  $id = $conn->lastInsertId();
-       $_SESSION['id_document'] = $id;
+    if ($resultat) {
+       $_SESSION['message'] = "Enregistrement effectué avec succès ! ";
 	} else {
-	  $_SESSION['message']= "Erreur lors de l'enregistrement.";
+	  $_SESSION['message']= "Erreur lors de l'enregistrement ! ";
 	}
 	
    header('Location: ../ecritureBD.php');
