@@ -16,10 +16,12 @@
 	 <link href="css/accordeon2.css" rel="stylesheet" /> <!-- Exclusivement sur cette page!  -->
 	 <style>
        	.contenu{
-		    /* on ⚠️⚠️⚠️remplace float:left sur les contenus par display:flex sur le conteneur⚠️⚠️⚠️ */
-	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Attention. form est le parent des colones, pas .contenu ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
-	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
-	       display: flex;
+		    /*⚠️  On remplace float:left sur les contenus par display:flex sur le conteneur ⚠️      */
+	       /*⚠️⚠️ Attention. form est le parent des colones, pas .contenu                  ⚠️⚠️   */
+	      /*⚠️⚠️⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture ⚠️⚠️⚠️*/
+	      
+		  display: flex;
+		  
          }
 	 </style>
 
