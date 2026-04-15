@@ -43,7 +43,7 @@ include("SERVEUR/pop.php");
 				<h6 align="left">
 				    <p style="line-height:0; ">
 				      <input type="text"   style="margin-left:65px;"  value="<?php echo $donnees["acte"];?>" ><br>
-				      Acte N° -----------------------------------</h6><h6 align="left" >
+				      Acte N° -----------------------------------
 				    </p>
 				    <p style="line-height:0; ">
 				      <input type="text"  style="margin-left:65px;" value="<?php echo $donnees["date_acte"];?>" ><br>
@@ -53,119 +53,114 @@ include("SERVEUR/pop.php");
 			</div>
 		</td>
       
-	  <td  align="left"  rowspan="2" >
-	     <h1 align="center"  style="color: white; text-shadow: 2px 2px 4px #1D702D;">ACTE DE NAISSANCE</h1>
-		 <div style="margin-left:10px;">
-		 <p style="line-height:0; ">
-	        <input type="text"  style="margin-left:85px; " value="<?php echo $donnees["naissance_jour_moi"];?>"  ><br><b>
-		    Le -------------------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0;">		 
-		    <input type="text"  style="margin-left:85px;" value="<?php echo $donnees["naissance_an"];?>" ><br>
-		    et l'an ---------------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:20px;" value="<?php echo $donnees["naissance_heure"];?>"><input type="text"  style="margin-left:30px;" value="<?php echo $donnees["naissance_minuite"];?>"><br>
-		    &agrave; --------------------------heure(s) --------------------------------minute(s)<br><br>
-		 </p>
-		 <p style="line-height:0; margin-top:3em; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["naissance_nom_prenom"];?>"><br>
-		    est n&eacute;(e) ------------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["naissance_lieu"];?>"><br>
-		    &agrave; ---------------------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["naissance_sexe"];?>"><br>
-		    du sexe -------------------------------------------------------------------------<br><br><br>
-		 </p>
-         <p style="line-height:0; margin-top:3em;  ">		
-		    <input type="text"  style="margin-left:120px;"  value="<?php echo $donnees["pere_nom_prenom"];?>"><br>
-		    fils(fille de) --------------------------------------------------------------------<br>
-		 </p> 
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_datenaisance"];?>"><br>
-		    n&eacute(e) le ------------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_lieunaissance"];?>" ><br>
-		    &agrave; ---------------------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_profession"] ;?>" ><br>
-		    Profession ---------------------------------------------------------------------<br>
-		 </p>
-		 <p style="line-height:0; ">
-		    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_villederesidence"] ;?>" ><br>
-		    Démeurant &agrave; -----------------------------------------------------------------<br>
-		 </p>
-		 <p align="left" style="margin-top:3em;" >
-		    <p style="line-height:0; ">
-			    <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_nom_prenom"];?>"><br>
-			    et de ----------------------------------------------------------------------------<br>
-			</p> 
-			<p style="line-height:0; ">
-			   <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_datenaisance"];?>" ><br>
-			   n&eacute;(e) le -------------------------------------------------------------------------<br>
-			</p>
-			   <p style="line-height:0; ">
-			   <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_lieunaissance"];?>" ><br>
-			   &agrave; ---------------------------------------------------------------------------------<br>
-			</p>
-			<p style="line-height:0; ">
-			  <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_profession"] ;?>" ><br>
-			  Profession ---------------------------------------------------------------------<br>
-			</p>
-			<p style="line-height:0; padding-bottom:1em;">
-			  <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_villederesidenc"] ;?>" ><br>
-			  Démeurant &agrave; -----------------------------------------------------------------
-	        </p>
-		 </p>
-		 
-		 </div>
-	  </td>
-   </tr>
+	    <td  align="left"  rowspan="2" >
+	        <h1 align="center"  style="color: white; text-shadow: 2px 2px 4px #1D702D;">ACTE DE NAISSANCE</h1>
+		    <div style="margin-left:10px;">
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:85px; " value="<?php echo $donnees["naissance_jour_moi"];?>"  ><br>
+					Le -------------------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0;">		 
+					<input type="text"  style="margin-left:85px;" value="<?php echo $donnees["naissance_an"];?>" ><br>
+					et l'an ---------------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:20px;" value="<?php echo $donnees["naissance_heure"];?>"><input type="text"  style="margin-left:30px;" value="<?php echo $donnees["naissance_minuite"];?>"><br>
+					&agrave; --------------------------heure(s) --------------------------------minute(s)<br><br>
+				 </p>
+				 <p style="line-height:0; margin-top:3em; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["naissance_nom_prenom"];?>"><br>
+					est n&eacute;(e) ------------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["naissance_lieu"];?>"><br>
+					&agrave; ---------------------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["naissance_sexe"];?>"><br>
+					du sexe -------------------------------------------------------------------------<br><br><br>
+				 </p>
+				 <p style="line-height:0; margin-top:3em;  ">		
+					<input type="text"  style="margin-left:120px;"  value="<?php echo $donnees["pere_nom_prenom"];?>"><br>
+					fils(fille de) --------------------------------------------------------------------<br>
+				 </p> 
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_datenaisance"];?>"><br>
+					n&eacute(e) le ------------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_lieunaissance"];?>" ><br>
+					&agrave; ---------------------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_profession"] ;?>" ><br>
+					Profession ---------------------------------------------------------------------<br>
+				 </p>
+				 <p style="line-height:0; ">
+					<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["pere_villederesidence"] ;?>" ><br>
+					Démeurant &agrave; -----------------------------------------------------------------<br>
+				 </p>
+				 <p align="left" style="margin-top:3em;" >
+					<p style="line-height:0; ">
+						<input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_nom_prenom"];?>"><br>
+						et de ----------------------------------------------------------------------------<br>
+					</p> 
+					<p style="line-height:0; ">
+					   <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_datenaisance"];?>" ><br>
+					   n&eacute;(e) le -------------------------------------------------------------------------<br>
+					</p>
+					   <p style="line-height:0; ">
+					   <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_lieunaissance"];?>" ><br>
+					   &agrave; ---------------------------------------------------------------------------------<br>
+					</p>
+					<p style="line-height:0; ">
+					  <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_profession"] ;?>" ><br>
+					  Profession ---------------------------------------------------------------------<br>
+					</p>
+					<p style="line-height:0; padding-bottom:1em;">
+					  <input type="text"  style="margin-left:120px;" value="<?php echo $donnees["mere_villederesidenc"] ;?>" ><br>
+					  Démeurant &agrave; -----------------------------------------------------------------
+					</p>
+				 </p>
+		    </div>
+	    </td>
+    </tr>
    
    <tr>
-      <td align="center" rowspan="2"  >
+        <td align="center" rowspan="2"  >
 	        <h4> Naissance de:</h4> <br>
 			
 			   <input type="text"  style="margin-left:-95px; margin-bottom:0;"  value="<?php echo $donnees["nom"];?>">
 			   <hr style="margin-top:0;" />
 			
-			
 			   <input type="text"  style="margin-left:-95px; margin-bottom:0;"  value="<?php echo $donnees["prenom"];?>">
 			   <hr style="margin-top:0;" /><br>
-			   
-			
-
-	  </td>
-	  
-     
+	    </td>
    </tr>
    
-   <tr height="20px">             <td  rowspan="2">
-         <p align="left">
-	    <div style="margin-left:10px; line-height:0;">
-		  
-	      <h4 align="center"> D&eacute;claration faite par:</h4> 
-		 
-		  <input type="text"  style="margin-left:85px; " value="<?php echo $donnees["declaration_faite_par"];?>" >		  
-		  <br>----------------------------------------------------------------------------------------------------------------------<br> 
-		 <p>
-		  <input type="text"  style="margin-left:85px;"  value="<?php echo $donnees["datejugement"];?>"  >
-		  <br>----------------------------------------------------------------------------------------------------------------------<br>
-         </p> 
-		  
-		  <h4 align="center"> D&eacute;claration re&ccedil;ue le:</h4> 
-		  <input type="text"  style="margin-left:85px;" value="<?php echo $donnees["declaration_recue_pa"];?>" >
-		  <br>----------------------------------------------------------------------------------------------------------------------<br>
+   <tr height="20px">             
+	   <td  rowspan="2">
+			 <p align="left">
+			<div style="margin-left:10px; line-height:0;">
+			  
+			  <h4 align="center"> D&eacute;claration faite par:</h4> 
+			 
+			  <input type="text"  style="margin-left:85px; " value="<?php echo $donnees["declaration_faite_par"];?>" >		  
+			  <br>----------------------------------------------------------------------------------------------------------------------<br> 
+			 <p>
+			  <input type="text"  style="margin-left:85px;"  value="<?php echo $donnees["datejugement"];?>"  >
+			  <br>----------------------------------------------------------------------------------------------------------------------<br>
+			 </p> 
+			  
+			  <h4 align="center"> D&eacute;claration re&ccedil;ue le:</h4> 
+			  <input type="text"  style="margin-left:85px;" value="<?php echo $donnees["declaration_recue_pa"];?>" >
+			  <br>----------------------------------------------------------------------------------------------------------------------<br>
 
-		  <br>----------------------------------------------------------------------------------------------------------------------<br><br>
-	    </div>
-	  </p>
-   </td></tr>
+			  <br>----------------------------------------------------------------------------------------------------------------------<br><br>
+			</div>
+		  </p>
+	   </td>
+   </tr>
    
    <tr>
       <td align="left" >
