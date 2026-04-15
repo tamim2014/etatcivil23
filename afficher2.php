@@ -1,6 +1,20 @@
 <?php 
 
-
+/*
+ * Depuis ecritureBD.php   "n" est mis dans une variable session avant d'être transmis(via l'url) ici
+ *
+ * $valeurphp = $_SESSION['acte_saisi'];
+ *
+ * <a  href="afficher2.php?n=<?php echo $valeurphp; ?>"   onclick="window.open(this.href, 'Popup', ... '); return false; " >
+ *      <input type="button"  value="Afficher l'acte"  />
+ * </a>
+ *
+ * Il devrait donc y avoir ici une fonction : session_start();
+ * Mais comme "n" est passé par l'url =>  pas besoin de session_start();
+ *
+ * D'autres pages ont transmis un N° acte ici ⚠️
+ *
+ */
 
 if(!isset($_GET['n'])) $_GET['n']="";
 $acte=$_GET['n'];

@@ -1,10 +1,24 @@
 <?php
 
-if(!isset($_GET['n'])) $_GET['n']=""; // Transmis par 'SERVEUR/colonne-afficher-naissance.php'
+/*
+ * Depuis ecritureBD.php   "n" est mis dans une variable session avant d'être transmis(via l'url) ici
+ *
+ *  $id_document = $_SESSION['id_document'] ?? "";
+ *
+ * <a  href="imprimer.php?n=<?php echo $id_document; ?> "  >
+ *      <input type="button"  value="Imprimer l'acte" />
+ * </a>
+ *
+ * D'autres pages ont transmis un identifiant ici ⚠️
+ *
+ */
+
+if(!isset($_GET['n'])) $_GET['n']=""; // Transmis par ecritureBD.php ou 'SERVEUR/colonne-afficher-naissance.php' , ...etc
 $id=$_GET['n'];
 $id=ltrim($id);
-try{$conn = new PDO('mysql:host=localhost;dbname=etatcivil;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));} //// Le array active les exception PDO: pour obtenir + de détail sur d'eventuels erreurs
-catch(Exception $e){die('Erreur de connexion à la base de données: '.$e->getMessage());}
+// try{$conn = new PDO('mysql:host=localhost;dbname=etatcivil;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));} //// Le array active les exception PDO: pour obtenir + de détail sur d'eventuels erreurs
+// catch(Exception $e){die('Erreur de connexion à la base de données: '.$e->getMessage());}
+require_once 'SERVEUR/connection_PDO.php';
 
 $reponse = $conn->query('SELECT * FROM liste WHERE ID='.$id );
 $donnees = $reponse->fetch();
