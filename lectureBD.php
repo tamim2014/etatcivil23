@@ -22,7 +22,7 @@
 	      
 		  display: flex; /** 🎯 */
 		  
-         }
+        }
 	 </style>
 
 	 
@@ -79,7 +79,7 @@
 						 <div id="yivawo" class="scrolbar" ></div> 
 					 </td></tr>
 				</table>
-				 <!-- Suppression sous-menu personnalisé(Remplacé par sous-menus de l'accrdéon du topnav) -->  
+				<!-- Suppression sous-menu personnalisé(Remplacé par sous-menus de l'accrdéon du topnav) -->  
 		        <!-- include("inc/lecture/sousmenu.php"); --> 
             </aside>
         </div>			
@@ -89,11 +89,6 @@
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
     </div>
     <!-- <div class="mnayvawo">  <button  class="boutoyahemnayivawo"> Actes extraits de la pr&eacute;fecture de:<span id="wilaya_" style="color:#000066;  font-size: 17px; font-style: italic; font-family: \"Times New Roman\", Georgia, Serif;" > <?php  echo  $s; ?></span> </button>   </div>  -->
-
-
-
-   
-
 <body>
 </html>
 

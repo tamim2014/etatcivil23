@@ -1,5 +1,5 @@
 
-<?php  include("SERVEUR/authentification.php ");  ?>
+<?php  include("SERVEUR/authentification.php");  ?>
 
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Accueil </title>
+    <title>authentification </title>
 	<link href="css/template.css"  rel="stylesheet" type="text/css" >
 	<link href="css/accueil22.css" rel="stylesheet"   />
     <link href="css/slide.css"     rel="stylesheet"   />
@@ -122,8 +122,8 @@
 						      
 							</caption>
 						 <tr > <td >AUTHENTIFICATION</td></tr>
-						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input  type="text"   id="login_"    name="pseudo_" > </td></tr> 
-						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input  type="password"  id="pswd_"     name="motdepasse_"> </td></tr>
+						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input type="text"   id="login_"  name="pseudo_" > </td></tr> 
+						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input type="password"  id="pswd_"   name="motdepasse_"> </td></tr>
 						 <tr ><td style="padding-top:1em;">
 							 <textarea style="font-size:1em; " class="t_area" name="myTextBox"> Veuillez saisir vos identifiants </textarea>
 						 <br/><input id="valider_" type="submit" class="submit btnHover" value="Valider"   name="envoie"  style="background: #ECECEA ; color:#111; padding:.3em 3.3em; margin:1em auto 0; border-radius:4px; " />

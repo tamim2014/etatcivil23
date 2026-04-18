@@ -68,9 +68,7 @@ try {
 			</div> 
 		</div>		
 		<div class="menu topnav"  id="myTopnav"> 
-			<ul>
-			  <li style="width:auto; color:inherit;">.</li>
-			</ul> 
+			<?php include("inc/accueil/accueil_menucentral_ecriture.php"); ?> 
 		</div>
     </header>
 	<div class="contenu">

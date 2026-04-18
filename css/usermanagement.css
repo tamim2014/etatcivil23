@@ -1,6 +1,17 @@
    /*
     *
-	* Jeudi 17.04.2026
+	*  Garges-les-gonesse
+	*  Jeudi 17.04.2026
+	*
+	*  Le squelette de la page a evolué
+	*  L'ajout de nouvelles formulaires( add/delete user ) dans div.colonne_contenu impose de sortir cette colonne hors du formulaire du form#formeSource
+	*  => .colonne_contenu est donc expulsé de son conteneur. Il adjacent à son ancien conteneur form#formeSource
+	*  => form#Source et .colonne_contenu sont tous les 2 agencés par un display:flex sur leur conteneur .contenu
+	*
+	* .colonne_laterale est par contre resté dans form#formSource
+	*
+	*  Coût ajustement(front-end): 10H ( integration + responsive sur la nouvelle structure et son contenu)
+	*  Coût back-end: 2H
 	*
 	*/
 	    .btnHover:hover{
@@ -269,7 +280,7 @@
   */
   
  
- @media (max-width: 1000px) { 
+    @media (max-width: 1000px) { 
 		#formSource{ width:100%; height:40vh; }
 		.colonne_laterale{ padding:0; }
 		.tablegauche{ min-height:auto !important; width:100%; }
@@ -301,6 +312,9 @@
 			margin-top:28px; /* ⚠️  virer ce margin-top par( margin-top:auto;) et passer à une disposition vertcale de tous les champs */
 		}
 	}
+	
+	
+	
 
    /* Nouvelle façon de fixer le footer */
 	 body{ 

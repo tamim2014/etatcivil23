@@ -1,6 +1,7 @@
-// lectureBD.php :  c'est la page qui resulte de la recherche document par le bouton "Liste acte XXX"(panneau CENTRAL de la page d'accueil) 
 	 
 	// GESTION DES MENU DE LA PAGE lectureBD.php 
+	// Ces menus sont virés dans la nouvelle page lectureBD.php(archivé chez github
+	// Lien de l'archive: https://github.com/tamim2014/etatcivil23/tree/lectureBD_archive
 	 
         /***************************** script de base qui a ispiré le slide**********************
 		*****************************************************************************************************
@@ -13,8 +14,7 @@
        *******************************************************************************************************
 	   *******************************************************************************************************
 	   *******************************************************************************************************/
-	   
-	   
+
 	   $(document).ready(function(){
 		// Affichage du sous menu de gauche(liste des îles) au survol de la souris
             $("#m").mouseover(function(){
@@ -112,16 +112,9 @@
 
         });
 
- 
-
 //§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-//---------------Page: lectureBD2.php(suite à une recherche sur le panneau gauche de la page d'accueil)---------------------------------------
-//§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+//---------------Page: lectureBD2.php(suite à une recherche document depuis la page d'accueil)---------------------------------------
 
-		 
-		 
-		  
-// lectureBD2.php :  c'est la page qui resulte de la recherche document par le moteur de recherche(panneau de gauche de la page d'accueil)
         // instance XMLHttpRequest  for all browsers_f°perso
 		function instanceXMLHttpRequest() {
                 if (window.XMLHttpRequest) {
@@ -155,10 +148,28 @@
             }
         }
 // Cette fonction répond au bouton"Zoom" ou au bouton "Affiche plein écran"
+// ces fonctionnanalités sont virées dans la nouvelle page lectureBD.php
+// mais je ne suprime pas encore la fonction car je sais pas si je l'ai utilisée ailleurs!
     function popup_lectureBD2()
         {    
            //window.open("http://google.fr/", "Autrepage", "toolbar=1, location=1, directories=1, status=1, scrollbars=1, resizable=1, copyhistory=1");
 		     window.open("afficherdanspop.php",'Popup','scrollbars=1,Menubar=1,resizable=1,height=409,width=958,top=258,left=175'); return false;          
 		}
-		
-
+/**
+ *
+ * Pour les popup de la page d'accueil (Panel->Afficher)
+ * Pour le popup de lectureBD.php( lectureBD.php->SERVEUR/lectureBD_afficherNaissance.php)
+ *
+ * Peut être pas le bon endroit
+ * mais je replique cette fonction ici
+ * pour l'appliquer à la page SERVEUR/lectureBD_afficherNaissance.php
+ *
+ */
+function ouvrePop(url) {
+	window.open(
+		url,
+		'Popup',
+		'scrollbars=1,resizable=1,height=409,width=918,top=258,left=175'
+	);
+	return false;
+}
