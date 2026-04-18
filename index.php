@@ -12,126 +12,8 @@
 	<link href="css/accueil22.css" rel="stylesheet"   />
     <link href="css/slide.css"     rel="stylesheet"   />
 	<link href="css/dropdown.css"  rel="stylesheet"    />
-	
-	<style>
-	    .btnHover:hover{
-			padding-top:1%; padding-bottom:1%;
-			padding-left:12% !important;
-			font-size:1em !important;
-			font-style: italic !important;
-			background-color: #cdbe7f !important;  
-			border-radius:2px;			
-            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5);
-		}
-		
-		.colonne_laterale{
-			width:39.5%;
-		}
-
-	    .tablegauche{
-		    display:flex; /* c'ce qui donne ce rendu particulier à cette page ⚠️ */
-			width:79vh; /* ⚠️ */
-		    min-height:100vh !important; /* ⚠️ */
-	    }
-	    .tablegauche tr td {  
-		   padding-left:2vw;
-		   padding-bottom:1em;
-		} 
-		
-		.tablegauche tr td input, textarea{
-			width:21vw !important;
-			max-width:300px;
-			padding:.4em;
-		}
-		textarea{ height:10vh; }
-		#auth{ padding-top:.7em;}
-		
-		/* Virer les bortures autour des champs */
-		input:focus,
-		textarea:focus {
-			outline: none !important;
-			border: none !important;
-		}
-
-		
-		input#login_, input#pswd_{
-			background:#ddd !important; /* impossible à changer ⚠️  j'sais pas pourquoi! */
-		}
-		 /* solution: Ecraser le input:-webkit-autofill */
-		
-		input:-webkit-autofill,
-		input:-webkit-autofill:focus {
-			background-color:#ddd !important;
-			-webkit-box-shadow: 0 0 0px 1000px #c4c4c4 inset !important;
-			box-shadow: 0 0 0px 1000px #ddd inset !important;
-			outside:none !important; /* ?????*/
-		}
-		input:-webkit-autofill:hover {
-			background-color: #cdbe7f  !important; 
-			-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5) !important;
-			box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5) !important;
-		}
-		
-		/*
-		#login_:hover , #pswd_:hover  { background-color:white !important; color:#ffffff; font-size: 17px; font-weight:bold;    box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset, 0px 2px 2px 0px rgba(255, 255, 255, 0.5); }
-        #valider_:hover { color: #1D702D;   font-style: italic;}
-        */
-
-	   
-	   /* Nouvelle façon de fixer le footer */
-	     body{ 
-			 display:flex;	  
-			 flex-direction:column;
-			 min-height:100vh;
-			 width:100%;		 
-		 }
-         .contenu {
-           flex:1;		   
-         }
-		 
-/*§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
-		 
-/* RESONSIVE div#myTopnav */
-		 
-		 
-		 
-/* RESONSIVE div.contenu */
-
-		/*  ✅ 1. Rendre .contenu responsive */
-	    .contenu {
-			display: flex;
-			flex-wrap: wrap; /* ← indispensable */
-			width: 100%;
-			box-sizing: border-box;
-		}
-		/*  ✅ 2. Rendre .colonne_laterale flexible */
-		 .colonne_laterale {
-			flex: 1 1 200px; /* largeur minimale */
-			/* max-width: 300px; */
-			box-sizing: border-box;
-		}
-
-		/*  ✅ 3. Rendre .colonne_contenu flexible */
-		    .colonne_contenu {
-				flex: 1 1 400px; /* largeur minimale */
-				max-width: 100%;
-				box-sizing: border-box;
-			}
-			
-		/* 🎯 On ajuste les dimensions( surtout .tablegauche) 	*/
-		
-		@media (max-width: 1000px) { 
-			#formSource{ width:100%; height:40vh; } 
-			.colonne_laterale{ padding:0; } 
-			.tablegauche{ 
-			      width:100%; /* ⚠️ */
-			      min-height:auto !important; /* ⚠️ */
-				  
-			} 
-		}
-        		
-		 
-	</style>
+	<link href="css/flextablegauche.css"  rel="stylesheet"    />
+	<link href="css/responsive.css"  rel="stylesheet"    />
 	<script src="js/jquery.js"></script>
 </head>
 
@@ -145,11 +27,45 @@
 			</div> 
 		</div>		
 		<div class="menu topnav"  id="myTopnav"> 
-			   <?php include("inc/accueil/accueil_menucentral_login.php");   ?>
+			<!--- include("inc/accueil/accueil_menucentral_login.php");   -->
+			<ul style="margin-left:28%;">
+				 <li class="dropdown" >
+					<button class="dropbtn">&emsp;&ensp;<a href="#">Accueil</a> &emsp;&emsp;</button>
+				</li>	  
+				<li class="dropdown" >
+					<button class="dropbtn"> Acte de naissance</button>
+					<div class="dropdown-content">
+					  <a href="#">Nouvel Acte naissance</a>
+					  <a href="#">Liste Actes naissance</a>
+					</div>
+				</li>
+				  <li class="dropdown"> 
+					<button class="dropbtn">Acte de mariage</button>
+					<div class="dropdown-content">
+					  <a href="#">Nouvel Acte mariage</a>
+					  <a href="#">Liste Acte mariage</a>
+					</div>
+				</li>
+				<li class="dropdown">
+					 <button class="dropbtn">Acte de divorce</button>
+					 <div class="dropdown-content">
+					   <a href="#">Nouvel Acte de divorce</a>
+					   <a href="#">Liste Acte de divorce</a>
+					 </div>	 
+				</li>
+				<li class="dropdown">
+					 <button class="dropbtn">Acte de dec&egrave;s</button> 
+					<div class="dropdown-content">
+					   <a href="#">Nouvel Acte de dec&egrave;s </a>
+					   <a href="#">Liste Acte de dec&egrave;s </a>
+					 </div>	
+							 
+				</li>
+			</ul>		
 		</div>
     </header>
     <div class="contenu"  >
-	    <form id="formSource" action ="" method="POST" name="form1"   >
+	    <form id="formSource" action ="" method="POST" name="form1" >
 			<!-- LE PANNEAU DE GAUCHE : Recher des document par numero ou nom -->
 			<div class="colonne_laterale" >
 				<aside  class="aside1">
@@ -184,6 +100,7 @@
     <div class="footer" style="text-align:left; ">
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
     </div>
+
 </body>
 </html>
 
