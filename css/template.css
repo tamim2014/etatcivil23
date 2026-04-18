@@ -18,7 +18,7 @@ body {
     color: white;
     position: relative;    
 }
-
+/* topNav */
 .menu{
     background-color: #74AFAD; /*  ✍️*/
     /* Essai  */
@@ -103,6 +103,20 @@ body {
 	margin-top:0;
 	padding:0.5em 1em; 
 }
+
+/* Nouvelle façon de fixer le footer */
+ body{ 
+	 display:flex;	  
+	 flex-direction:column;
+	 min-height:100vh;
+	 width:100%;		 
+ }
+ .contenu {
+   flex:1;		   
+ }
+
+
+
 
 img {
     float:left;
