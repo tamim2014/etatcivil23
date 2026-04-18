@@ -12,8 +12,8 @@ $pr=ltrim($pr);// Voilà la solution MASHA ALLAH. Un espace s'est glissé en dé
 //$pr=rtrim($pr);// pour supprimer un eventuel espace en fin de chaîne
 	
 // On enleve l'echappement si get_magic_quotes_gpc est active
-// Mais attention la fonction get_magic_quotes_gpc() n'existe plus depuis PHP 7.4 
-// On peut donc supprimer ce bloc de code.
+// Mais attention:  la fonction 🔍get_magic_quotes_gpc()🔍 n'existe plus depuis PHP 7.4 
+// ❌ On peut donc supprimer ce bloc de code.
 if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) 
 {
 	$_GET['pr'] = stripslashes($_GET['pr']);
@@ -27,9 +27,11 @@ require_once  'connection_PDO.php';
 
 //2.Requête
 
-// $requete='SELECT * FROM liste WHERE prefecture="'.$pr.'"';// LE PROBLEME EST Là .Pourquoi Mysql ne voit pas la variable $pr? Résolu 3 jours de galère mais résolu: supprimer l'espace en début de chaîne:$pr=ltrim($pr); ?????????????
-// C’est une injection SQL directe. Aujourd’hui, c’est totalement interdit.
-// 👉 Il faut utiliser une requête préparée :
+// $requete='SELECT * FROM liste WHERE prefecture="'.$pr.'"';
+// ❌ LE PROBLEME1:Pourquoi Mysql ne voit pas la variable $pr  ? 
+// ✅SOLUTION(3 jours de galère mais résolu par ltrim)=> supprimer l'espace en début de chaîne:$pr=ltrim($pr); 
+// ❌ LE PROBLEME2: Risque d'une injection SQL. Aujourd’hui, c’est totalement interdit.
+// ✅SOLUTION => utiliser une requête préparée :
 
 $requete = $conn->prepare("SELECT * FROM liste WHERE prefecture = :pr");
 $requete->execute(['pr' => $pr]);
@@ -45,23 +47,12 @@ $reponse = $requete; // déjà exécutée ( avec la reqête préparée, pas beso
 $table='<table class="couleurPoliceTable">'; 
 $table.='<tr class="tetetable" ><th>Nom </th><th> Prenom </th><th> Numéro </th><th> Prefecture </th><th>Imprimer</th><th style="border-radius:8px 0 8px 8px;">Afficher</th> <tr>';
 while($ligne = $reponse->fetch()){// en utlisant FOREACH ça marche pas .j'sais pas pourquoi
- /**
-    LecturBD.php/lectureBD_afficherNaissance.php: On affiche plus de document via "afficher.php" .
-    On le fait avec "afficherdanspop.php" .
-    Usage de la fonction popup_lectureBD2()  pour ce faire.
-	Probleme:
-	  Seul le premier document dont l'identifiant est stocké( dans la variable session) continu de s"afficher .
-      Aucun autre document ne êut s'afficher
-    solution
-      Ne pas utiliser une variable session
-      Donc revenir sur le fichier afficher.php et prendre le temps de le formater	  
- */
  
  //$table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td><td><a href="imprimer.php?n='.$ligne["ID"].'">Imprimer</a></td><td><a href="afficher.php?n='.$ligne["ID"].'" onclick=" window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 \'); return false;">Afficher</a></td></tr>';
- //👉 TASK1: il faut mettre le popup dans une fonction ( J'ai mis la fonction dans ⚠️js/capture_items.js⚠️)
+ //👉 TASK1: il faut mettre le popup dans une fonction ( J'ai mis la fonction dans ⚠️js/lectureBD.js⚠️)
  //$table.='<tr><td>'.$ligne["nom"].'</td><td>'.$ligne["prenom"].'</td><td>'.$ligne["acte"].'</td><td>'.$ligne["prefecture"].'</td><td><a href="imprimer.php?n='.$ligne["ID"].'">Imprimer</a></td><td><a href="afficher.php?n='.$ligne["ID"].'" onclick="return ouvrePop(this.href);">Afficher</a></td></tr>';
- //👉 TASK2: Remplacer les liens "Imprimer" et "Afficher" par des btn checkbox
- $table .= '<tr>
+
+$table .= '<tr>
 <td>'.$ligne["nom"].'</td>
 <td>'.$ligne["prenom"].'</td>
 <td>'.$ligne["acte"].'</td>
