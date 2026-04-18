@@ -204,19 +204,19 @@
 		}
 		.closebtn:hover { color: #700000; }
 
+        /*§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
 
-
-	    /* test responsive: div.colonne_contenu deborde si on reduis la fenêtre => on essai de resoudre ça */
+	    /* Test responsive: div.colonne_contenu deborde si on reduis la fenêtre => on essai de resoudre ça */
 	   
 
-	   /*  ✅ 1. Rendre .contenu responsive */
+	    /*  ✅ 1. Rendre .contenu responsive */
 	    .contenu {
 			display: flex;
 			flex-wrap: wrap; /* ← indispensable */
 			width: 100%;
 			box-sizing: border-box;
 		}
-		 /*  ✅ 2. Rendre .colonne_laterale flexible */
+		/*  ✅ 2. Rendre .colonne_laterale flexible */
 		 .colonne_laterale {
 			flex: 1 1 200px; /* largeur minimale */
 			/* max-width: 300px; */
@@ -281,10 +281,13 @@
   
  
     @media (max-width: 1000px) { 
-		#formSource{ width:100%; height:40vh; }
-		.colonne_laterale{ padding:0; }
-		.tablegauche{ min-height:auto !important; width:100%; }
-         h1 {padding-top:1.5em; padding-bottom:0; font-size:1.2em; }
+	
+		#formSource{ width:100%; height:40vh; } /* ⚠️ On reduit la hauteur du gd formulaire avant de liser les petites formulaire en bas */
+		.colonne_laterale{ padding:0; } /* ⚠️ Pour que .tablegauche remplisse toute la largeur     */
+		.tablegauche{ min-height:auto !important; width:100%; } /* ⚠️ */
+        
+
+		h1 {padding-top:1.5em; padding-bottom:0; font-size:1.2em; }
 		.form-container {
 			width: 95%;
 			padding: 15px;

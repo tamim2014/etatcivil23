@@ -30,7 +30,8 @@
 
 	    .tablegauche{
 		    display:flex; /* c'ce qui donne ce rendu particulier à cette page ⚠️ */
-		    min-height:100vh !important; 
+			width:79vh; /* ⚠️ */
+		    min-height:100vh !important; /* ⚠️ */
 	    }
 	    .tablegauche tr td {  
 		   padding-left:2vw;
@@ -42,9 +43,9 @@
 			max-width:300px;
 			padding:.4em;
 		}
-		textarea{
-			height:10vh;
-		}
+		textarea{ height:10vh; }
+		#auth{ padding-top:.7em;}
+		
 		/* Virer les bortures autour des champs */
 		input:focus,
 		textarea:focus {
@@ -88,6 +89,48 @@
            flex:1;		   
          }
 		 
+/*§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ */
+		 
+/* RESONSIVE div#myTopnav */
+		 
+		 
+		 
+/* RESONSIVE div.contenu */
+
+		/*  ✅ 1. Rendre .contenu responsive */
+	    .contenu {
+			display: flex;
+			flex-wrap: wrap; /* ← indispensable */
+			width: 100%;
+			box-sizing: border-box;
+		}
+		/*  ✅ 2. Rendre .colonne_laterale flexible */
+		 .colonne_laterale {
+			flex: 1 1 200px; /* largeur minimale */
+			/* max-width: 300px; */
+			box-sizing: border-box;
+		}
+
+		/*  ✅ 3. Rendre .colonne_contenu flexible */
+		    .colonne_contenu {
+				flex: 1 1 400px; /* largeur minimale */
+				max-width: 100%;
+				box-sizing: border-box;
+			}
+			
+		/* 🎯 On ajuste les dimensions( surtout .tablegauche) 	*/
+		
+		@media (max-width: 1000px) { 
+			#formSource{ width:100%; height:40vh; } 
+			.colonne_laterale{ padding:0; } 
+			.tablegauche{ 
+			      width:100%; /* ⚠️ */
+			      min-height:auto !important; /* ⚠️ */
+				  
+			} 
+		}
+        		
+		 
 	</style>
 	<script src="js/jquery.js"></script>
 </head>
@@ -96,7 +139,8 @@
     <header>
 		<div class="en-tete">
 			<div class="hollowTop"   >				   
-			   <input type=image src="img/drapeau.png" align="left" class="flag" style="width:30%; height:100%; filter:brightness(80%);" />
+			   <!--  <input type=image src="img/drapeau.png" align="left" class="flag" style="width:30%; height:100%; filter:brightness(80%);" /> -->
+			   <input type=image src="img/drapeau.png" align="left" class="flag" style="height:100%; filter:brightness(80%);" />
 			   <p class="text_header" style="padding-top:2%; padding-left:45%;">OFFICE    D'&Eacute;TAT CIVIL </p>			  
 			</div> 
 		</div>		
@@ -104,8 +148,8 @@
 			   <?php include("inc/accueil/accueil_menucentral_login.php");   ?>
 		</div>
     </header>
-    <div class="contenu" >
-	    <form action ="" method="POST" name="form1" >
+    <div class="contenu"  >
+	    <form id="formSource" action ="" method="POST" name="form1"   >
 			<!-- LE PANNEAU DE GAUCHE : Recher des document par numero ou nom -->
 			<div class="colonne_laterale" >
 				<aside  class="aside1">
@@ -121,7 +165,7 @@
 							  <img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; margin-bottom:1%; width:20%;  "  />
 						      
 							</caption>
-						 <tr > <td >AUTHENTIFICATION</td></tr>
+						 <tr > <td id="auth" >AUTHENTIFICATION</td></tr>
 						 <tr><td> <font color="#cdbe9f"><b>Entrer votre</b></font> login<br/> <input type="text"   id="login_"  name="pseudo_" > </td></tr> 
 						 <tr><td> <font color="#cdbe9f"><b>Votre</b></font> mot de passe<br/> <input type="password"  id="pswd_"   name="motdepasse_"> </td></tr>
 						 <tr ><td style="padding-top:1em;">
