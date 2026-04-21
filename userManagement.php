@@ -3,11 +3,9 @@
    
 	
     include("SERVEUR/authentification.php "); 
-	// ✅ Afficher les utilisateurs
-	$officiers = "SELECT * FROM listeofficiers;";
-	$resultat = mysqli_query($conn, $officiers);
 
-    // ✅ Ajouter un utilisateur
+
+    // ✅ 1. Ajouter un utilisateur
 	
 	if (isset($_POST['ajouter'])) {
 
@@ -49,8 +47,7 @@
 		}
 	}
 	
-	// ⛔ Suprimer un utilisateur
-	   
+	// ⛔ 2. Suprimer un utilisateur
 		if (isset($_POST['supprimer'])) {
 			$pseudo_del = mysqli_real_escape_string($conn, $_POST['pseudo_del']);
 			if (!empty($pseudo_del)) {
@@ -88,6 +85,10 @@
 			}
 		}
 		
+	// 👁️ 3. Afficher tous les utilisateurs( officiers d'état civil)
+	    $officiers = "SELECT * FROM listeofficiers";
+	    $resultat = mysqli_query($conn, $officiers);
+		
 
 ?>
 
@@ -105,6 +106,9 @@
 	<link href="css/flextablegauche.css"  rel="stylesheet" />
 	<link href="css/usermanagement.css"  rel="stylesheet"    /> <!-- ⚠️ specifique à cette page -->
 	<link href="css/responsive.css"  rel="stylesheet"    />
+	<style>
+
+	</style>
 	
 	
 	<script src="js/jquery.js"></script>
@@ -112,14 +116,14 @@
 
 <body >
 
-    <header>
+    <header  >
 		<div class="en-tete">
 			<div class="hollowTop"   >				   
 			   <input type=image src="img/drapeau.png" align="left" class="flag" style="height:100%; filter:brightness(80%);" />
 			   <p class="text_header" style="padding-top:2%; padding-left:45%;">OFFICE    D'&Eacute;TAT CIVIL </p>			  
 			</div> 
 		</div>		
-		<div class="menu topnav"  id="myTopnav"> 
+		<div class="menu topnav" id="myTopnav" > 
 		       <!-- ⚠️ Sur symfony il faut virer l'include et mettre le morcaut html integral  --> 
 		       <!-- ⚠️ ou {% include 'fichier.html.twig' %}  --> 
 			   <?php include("inc/accueil/accueil_menucentral_login.php");   ?>
@@ -207,13 +211,13 @@
 			<!-- liste user -->
 			<div class="form-container">
 			  			    <h2>Liste des officiers</h2>
-				<table class="officiers scrolbar" border="1" cellpadding="5">
+				<table class="officiers scrolbar" cellpadding="5" style="border:1px solid #c4c4c4;">
 					<tr>
 						<th>ID</th>
 						<th>Pseudo</th>
 						<th>User</th>
 					</tr>
-					 <?php
+					<?php
 						while($ligne = $resultat->fetch_assoc()){
 							echo "
 							<tr>
@@ -223,7 +227,6 @@
 							</tr>";
 						}
 					?>
-						
 				</table>
 		    </div>  	
 		</div>
@@ -232,6 +235,20 @@
     <div class="footer" style="text-align:left; ">
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
     </div>
+	<script>
+	window.onscroll = function() {myFunction()};
+
+	var navbar = document.getElementById("myTopnav");
+	var sticky = navbar.offsetTop;  /* ⚠️*/
+
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {    /* ⚠️*/
+		navbar.classList.add("sticky")      /* ⚠️*/  
+	  } else {
+		navbar.classList.remove("sticky");  /* ⚠️*/
+	  }
+	}
+</script>
 </body>
 </html>
 

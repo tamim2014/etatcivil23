@@ -108,7 +108,7 @@ table.color_line tr:nth-child(2n+1) td  {
 }
 /* table usermanagement.php */
 table.officiers tr:nth-child(2n+1) td  { 
-    background:#ddd /*  silver    ✍️*/
+    background:#ccd7ff; /* ou #ddd ou  silver */
 }
 table.officiers tr  th  { 
 	background:#007bff;

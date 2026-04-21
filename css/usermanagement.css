@@ -222,6 +222,17 @@
 		}
 	}
 	
+
+	/* Ajout d'un sticky */
+	 
+	.sticky { 
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	}
+	#myTopnav{
+		z-index:3;
+	}
 	
 	
 
@@ -235,5 +246,7 @@
 	 .contenu {
 	   flex:1;		   
 	 }
+	 
+
 		 
 	
