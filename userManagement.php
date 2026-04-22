@@ -106,12 +106,7 @@
 	<link href="css/flextablegauche.css"  rel="stylesheet" />
 	<link href="css/usermanagement.css"  rel="stylesheet" /> <!-- ⚠️ specifique à cette page -->
 	<link href="css/responsive.css"  rel="stylesheet"/>
-	<style>
-
-	</style>
-	
-	
-	<script src="js/jquery.js"></script>
+	<script src="js/jquery.js"></script><!-- pourquoi? -->
 </head>
 
 <body >
@@ -235,20 +230,7 @@
     <div class="footer" style="text-align:left; ">
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
     </div>
-	<script>
-	window.onscroll = function() {myFunction()};
-
-	var navbar = document.getElementById("myTopnav");
-	var sticky = navbar.offsetTop;  /* ⚠️*/
-
-	function myFunction() {
-	  if (window.pageYOffset >= sticky) {    /* ⚠️*/
-		navbar.classList.add("sticky")      /* ⚠️*/  
-	  } else {
-		navbar.classList.remove("sticky");  /* ⚠️*/
-	  }
-	}
-</script>
+	<script src="js/sticky.js"></script>
 </body>
 </html>
 
