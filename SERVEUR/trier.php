@@ -4,8 +4,9 @@
  session_start();
  
  require_once 'connection_mysqli.php';
- /*
- * A défaut d'une prefecture selectionné( $_SESSION["v"]): Aucune table ne peut s'ouvrir
+/*
+ * A défaut d'une prefecture selectionné( $_SESSION["v"]):
+ * Aucune table ne peut s'ouvrir
  * ❌ => Un message d'erreur s'impose
  * ✅ => Cette condition corrige ce bug
  */

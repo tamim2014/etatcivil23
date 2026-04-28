@@ -28,16 +28,14 @@ session_start();
 			exit;
 		}
 
-		
-		
-        // Utilisateurs officiers d'état civil
+        //On stocke le role en dans $_SESSION["user_role"]
 		$row = mysqli_fetch_assoc($req);
 
 		if (!$row) {
 			$message = 'Veuillez saisir vos identifiants';
 		} else {
 
-			$_SESSION["pseudo"] = $row["pseudo"]; //🎁
+			$_SESSION["pseudo"] = $row["pseudo"]; //🎁 pour les message d'avertissement
 			$_SESSION["user_role"] = $row["roles"];//🎁 Gestion des droits(1.3 👉 colonne_rectifier.php, colonne_supprimer.php)  
 
 			header("Location: accueil.php");
@@ -47,3 +45,6 @@ session_start();
 
 
 ?>
+
+
+ 
