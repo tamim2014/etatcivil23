@@ -14,7 +14,7 @@ session_start();
   if(isset($_POST['nom_']))   $nomm=$_POST['nom_'];
 
 	// moteur de recherche 
-	$message ="Pour trouver un document, entrer ci-haut, son num&eacute;ro, ou son nom";
+	$message="Pour trouver un document, entrer ci-haut, son num&eacute;ro, ou son nom";
 	//if(isset($_POST['acte_']) && !ctype_digit($numero) ){$message = ' le numero est mal saisi'; }
 	
     if(!empty($numero) && ctype_digit($numero) )
@@ -33,7 +33,7 @@ session_start();
 
 	    //if ($result[0] == 0){
 		if (empty($result)) {
-			$message = ' aucun resultat trouv&eacute;'; 
+			$message ='aucun resultat trouv&eacute;'; 
 		}else{
 		 // --- enregistrement en session du numéro
 			$_SESSION["acte"] = $numero;

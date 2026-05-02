@@ -1,7 +1,13 @@
 
 <?php 
-   session_start();
-
+    //session_start();  backend/searcheEngin demarre une session
+    include("backend/searchEngine.php"); 
+	// parce qu'il y a déjà une variable $result defini pour cette page
+	// et que les message ne sont pas géré ici
+	// à cause de ce conflit de ces 2 variable qui porte le mm nom result
+	if(isset($result)){
+	  $resultNum = $result;
+    }
    /** 
     *
 	* num et nom  proviennent de la page accuiel.php
@@ -15,7 +21,7 @@
     if(!isset($_GET['num'])) $_GET['num']="";    $num=$_GET['num']; 
 	if(!isset($_GET['nom'])) $_GET['nom']="";     $nom=$_GET['nom'];
 	
-	require_once 'backend/connection_mysqli.php';
+	require_once 'backend/connection_mysqli.php'; //⚠️ searchEngine connete déjà mais en pdo
 	
 	if(!empty($num) ){
 	   $requete = "SELECT * FROM liste WHERE acte=".$num ;  
@@ -29,8 +35,21 @@
 	{
 		 $p = $donnees["prefecture"];
     }
-
-
+	
+	
+    // le message depuis backend/searchEngine.php n'est pas geré à cause du bloc php ci-haut
+	// Donc on l'injecte directement ici
+     $message="Pour trouver un document, entrer ci-haut, son num&eacute;ro, ou son nom";
+	 if (isset($resultNum) && empty($resultNum)) {
+		$message ='aucun resultat trouv&eacute;'; 
+	 }
+	 if(!empty($numero) && !ctype_digit($_POST['acte_'])) {
+		$message = 'le numero est mal saisi'; 
+	 }
+	 if (isset($result2) && empty($result2)){
+			$message = ' aucun resultat trouv&eacute;'; 
+	 }
+	 
     
 ?>
 
@@ -86,28 +105,25 @@
 		<!-- LE PANNEAU DE GAUCHE :  -->
 		<div class="colonne_laterale"  >
 			<aside class="aside1" >
-				<table class="tablegauche" style="height:25em;"> 
-				     <caption  style="caption-side:top; box-shadow: 0 20px 65px #cdbe9f inset;  "> 
-						<font color="gray" style="line-height:2;">
-							<h3> UNION DES COMORES  </h3>
-							<h6> Unit&eacute;-Solidarit&eacute;-D&eacute;veloppement  </h6>
-							<h4> MINISTERE DE L'INTERIEUR  </h4>
-						</font>
-					     <img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; width:20%;  "  />
-					 </caption>
-					 <tr ><td style="padding-top:0; padding-bottom:8em; margin-top:0; ">
-						
-                        <!--
-                        <div id="m"   style="width:80%; margin-left:10%;  padding-top:0; margin-top:0;    ">
-				            <div class="kangalaheMenu" style="margin-top:0;">
-							     
-                                 <a href="#" onclick="popup_lectureBD2(); " ><input  class="teteMenuGauche" type="button"  value="Afficher" align="center"  /> </a>								 
-				            </div>
-			            </div>
-                        -->						
-
-					 </td></tr>
-				</table>
+			    <form action ="" method="POST" name="form1" >
+					<table class="tablegauche" style="height:25em;"> 
+						 <caption  style="caption-side:top; box-shadow: 0 20px 65px #cdbe9f inset;  "> 
+							<font color="gray" style="line-height:2;">
+								<h3> UNION DES COMORES  </h3>
+								<h6> Unit&eacute;-Solidarit&eacute;-D&eacute;veloppement  </h6>
+								<h4> MINISTERE DE L'INTERIEUR  </h4>
+							</font>
+							<img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; width:20%;  "  />
+						 </caption>
+							 <tr > <td id="recherchedocument">RECHERCHE DE DOCUMENT</td></tr>
+							 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> number<br/> <input style="width:50%;" id="recherchenum" type="text" name="acte_" pattern=".{1,}"  > </td></tr> 
+							 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> name    <br/> <input style="width:50%;" id="recherchenom" type="text" name="nom_"  > </td></tr>
+							 <tr><td style="padding-top:1em;">
+								 <textarea class="t_area" style="font-size:1em;" name="myTextBox" cols="24" rows="4"> <?php echo $message; ?> </textarea>
+							 <br/><input class="btnHover" type="submit" name="envoie" value="Chercher"  style="background:transparent ; color:#111; padding:.3em 3.3em; margin:1em auto; " />
+							 </td></tr>
+					</table>
+				</form>
 			</aside>
 		</div>
 		<!-- LE PANNEAU DE DROITE :  -->

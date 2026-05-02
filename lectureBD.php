@@ -65,15 +65,15 @@
 								<h6> Unit&eacute;-Solidarit&eacute;-D&eacute;veloppement  </h6>
 								<h4> MINISTERE DE L'INTERIEUR  </h4>
 							</font>
-							 <img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; width:20%;  "  />
+							<img src="img/armoirie.png" style="z-index:3;  margin-left:40%; margin-right:40%; width:20%;  "  />
 						 </caption>
-							 <tr > <td id="recherchedocument">RECHERCHE DE DOCUMENT</td></tr>
-							 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> number<br/> <input style="width:50%;" id="recherchenum" type="text" name="acte_" pattern=".{1,}"  > </td></tr> 
-							 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> name    <br/> <input style="width:50%;" id="recherchenom" type="text" name="nom_"  > </td></tr>
-							 <tr><td style="padding-top:1em;">
-								 <textarea class="t_area" style="font-size:1em" name="myTextBox" cols="24" rows="4"> <?php echo $message ; ?> </textarea>
-							 <br/><input class="btnHover" type="submit" name="envoie" value="Chercher"  style="background:transparent ; color:#111; padding:.3em 3.3em; margin:1em auto; " />
-							 </td></tr>
+						 <tr > <td id="recherchedocument">RECHERCHE DE DOCUMENT</td></tr>
+						 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> number<br/> <input style="width:50%;" id="recherchenum" type="text" name="acte_" pattern=".{1,}"  > </td></tr> 
+						 <tr><td> <font color="#cdbe9f"><b>Search by</b></font> name    <br/> <input style="width:50%;" id="recherchenom" type="text" name="nom_"  > </td></tr>
+						 <tr><td style="padding-top:1em;">
+							 <textarea class="t_area" style="font-size:1em" name="myTextBox" cols="24" rows="4"> <?php echo $message; ?> </textarea>
+						 <br/><input class="btnHover" type="submit" name="envoie" value="Chercher"  style="background:transparent ; color:#111; padding:.3em 3.3em; margin:1em auto; " />
+						 </td></tr>
 					</table>
 				</form>
 			</aside>
