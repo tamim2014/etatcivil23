@@ -27,7 +27,7 @@
            showActe('.$donnees["ID"].') n'arrive pas à afficher->( affichage dans 1 PANEL)
            Je vais donc le remplacer par popup_lectureBD2() -> ( affichage dans 1 POPUP)  
         */
-       $table.='<tr ><td>'.$donnees["ID"].'</td><td>'.$donnees["nom"].'</td><td>'.$donnees["prenom"].'</td><td>'.$donnees["acte"].'</td>  <td> <a href=" modifier_.php? n='.$donnees["ID"].'  &  nom_='.$donnees["nom"].'   &  prenom_='.$donnees["prenom"].'   &   acte_='.$donnees["acte"].' ">Modifier</a> </td>  
+       $table.='<tr ><td>'.$donnees["ID"].'</td><td>'.$donnees["nom"].'</td><td>'.$donnees["prenom"].'</td><td>'.$donnees["acte"].'</td>  <td> <a href=" modifier_.php?n='.$donnees["ID"].'  &  nom_='.$donnees["nom"].'   &  prenom_='.$donnees["prenom"].'   &   acte_='.$donnees["acte"].' ">Modifier</a> </td>  
 	   <td> <a href="imprimer.php?n='.$donnees["ID"].'">Imprimer</a> </td> 
 	   <!--  Bug: le pop renvoie tjrs le mm doc en cas de resultat multiple -->
 	   <!--  Solution: On courcircute afficherdanspop on utilise afficher.php -->
@@ -39,6 +39,8 @@
 		</td>
 	   </tr>';
 	   // à utiliser dans backend/pop.php (ligne4) donc dans  afficherdanspop.php
+	   // puisqu'on a courscircuté afficherdanspop.php
+	   // backend/pop.php et cette variables ne variables vont à  la poubelle
 	   $_SESSION['identifiant']= $donnees['ID']; 
 	 } 
      $table.='</table>'; 
