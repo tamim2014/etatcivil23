@@ -1,13 +1,8 @@
 
 <?php 
-    //session_start();  backend/searcheEngin demarre une session
-    include("backend/searchEngine.php"); 
-	// parce qu'il y a déjà une variable $result defini pour cette page
-	// et que les message ne sont pas géré ici
-	// à cause de ce conflit de ces 2 variable qui porte le mm nom result
-	if(isset($result)){
-	  $resultNum = $result;
-    }
+  //session_start();  //backend/searcheEngin demarre une session
+    include("backend/searchEngine.php"); // c'est une connection pdo ici  qui m'oblige à convertir 3 fichiers
+
    /** 
     *
 	* num et nom  proviennent de la page accuiel.php
@@ -21,36 +16,35 @@
     if(!isset($_GET['num'])) $_GET['num']="";    $num=$_GET['num']; 
 	if(!isset($_GET['nom'])) $_GET['nom']="";     $nom=$_GET['nom'];
 	
-	require_once 'backend/connection_mysqli.php'; //⚠️ searchEngine connete déjà mais en pdo
-	
+	//require_once 'backend/connection_mysqli.php'; //⚠️ searchEngine connete déjà mais en pdo
+	 
+	/**  mysqli
 	if(!empty($num) ){
 	   $requete = "SELECT * FROM liste WHERE acte=".$num ;  
-	   $result = mysqli_query($conn,$requete);
+	   $resultat = mysqli_query($conn,$requete);
 	}else if(!empty($nom) ){
 	  $requete = "SELECT * FROM liste WHERE   nom='".ltrim($nom)."'" ;	  	 
-	  $result = mysqli_query($conn,$requete); 
+	  $resultat = mysqli_query($conn,$requete); 
 	}
-	
-	while ($donnees = mysqli_fetch_array($result) )  	 	 
-	{
+	while ($donnees = mysqli_fetch_array($resultat) ) {  	 	 
 		 $p = $donnees["prefecture"];
     }
+	*/
 	
+	//pdo
+	if (!empty($num)) {
+		$requete = $conn->prepare("SELECT * FROM liste WHERE acte = :num");
+		$requete->execute(['num' => $num]);
+	}
+	else if (!empty($nom)) {
+		$requete = $conn->prepare("SELECT * FROM liste WHERE nom = :nom");
+		$requete->execute(['nom' => ltrim($nom)]);
+	}
+	while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) {
+		$p = $donnees["prefecture"]; // Récupération des données
+	}
 	
-    // le message depuis backend/searchEngine.php n'est pas geré à cause du bloc php ci-haut
-	// Donc on l'injecte directement ici
-     $message="Pour trouver un document, entrer ci-haut, son num&eacute;ro, ou son nom";
-	 if (isset($resultNum) && empty($resultNum)) {
-		$message ='aucun resultat trouv&eacute;'; 
-	 }
-	 if(!empty($numero) && !ctype_digit($_POST['acte_'])) {
-		$message = 'le numero est mal saisi'; 
-	 }
-	 if (isset($result2) && empty($result2)){
-			$message = ' aucun resultat trouv&eacute;'; 
-	 }
-	 
-    
+
 ?>
 
 

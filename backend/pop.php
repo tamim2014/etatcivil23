@@ -5,6 +5,7 @@ $sql = 'SELECT * FROM liste WHERE ID='.$_SESSION['identifiant'];
 $req = $conn->query( $sql );
 $donnees = $req->fetch();
 
+
 ?>
 
 

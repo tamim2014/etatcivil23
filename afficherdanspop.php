@@ -1,6 +1,15 @@
 <?php
 session_start(); // Transmettre l'identifiant par une variable session(et nom par la variable $_GET) sinon PROBLEME:il faudra rechArger la page pour réactualiser la POPUP. Et j'ai passé 2 jour sans pouvoir resoudre ce probleme. Heureusemen la varible $_SESSION['identifiant ] résoud ce probleme de mémoire-cache qui renvoie tjrs l'ancien acte de naissance dans la popup de la page parent(page d'appel) 
 include("backend/pop.php");
+/*
+ * backend/pop.php
+ *
+ * require_once 'connection_PDO.php';
+ 
+ * $sql = 'SELECT * FROM liste WHERE ID='.$_SESSION['identifiant'];
+ * $req = $conn->query( $sql );
+ * $donnees = $req->fetch();
+*/
 
 ?>
 
@@ -183,6 +192,7 @@ include("backend/pop.php");
 	  </td>
    </tr>
 </table>
+        
 </div>
 </body>
 </html>

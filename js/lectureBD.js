@@ -55,7 +55,7 @@
                   $('#yivawo').load($(this).attr('href'));
                   e.preventDefault();//Tr�s important.Sinon redirection dans une autre page
              });
-		// r�a-Affichage de la colonne "Afficher" dans la table du pannau de droite
+		// r�a-Affichage de la table "Afficher" dans la table du pannau de droite
 		
 		     $(' div.kangalaheMenu a#show__').click(function(e){ 
                   $('#yivawo').load($(this).attr('href'));
@@ -113,7 +113,7 @@
         });
 
 //��������������������������������������������������������������������������������������������������������������������������������������������
-//---------------Page: lectureBD2.php(suite � une recherche document depuis la page d'accueil)---------------------------------------
+//---------------Page: lectureBD2.php(suite a une recherche document depuis la page d'accueil)---------------------------------------
 
         // instance XMLHttpRequest  for all browsers_f�perso
 		function instanceXMLHttpRequest() {
@@ -150,19 +150,16 @@
 // Cette fonction r�pond au bouton"Zoom" ou au bouton "Affiche plein �cran"
 // ces fonctionnanalit�s sont vir�es dans la nouvelle page lectureBD.php
 // mais je ne suprime pas encore la fonction car je sais pas si je l'ai utilis�e ailleurs!
-    function popup_lectureBD2()
-        {    
-           //window.open("http://google.fr/", "Autrepage", "toolbar=1, location=1, directories=1, status=1, scrollbars=1, resizable=1, copyhistory=1");
+    function popup_lectureBD2(){ 
+		     //window.open("afficherdanspop.php",'Popup','scrollbars=1,Menubar=1,resizable=1,height=409,width=958,top=258,left=175'); return false;          
 		     window.open("afficherdanspop.php",'Popup','scrollbars=1,Menubar=1,resizable=1,height=409,width=958,top=258,left=175'); return false;          
-		}
+	}
 /**
  *
- * Pour les popup de la page d'accueil (Panel->Afficher)
- * Pour le popup de lectureBD.php( lectureBD.php->backend/lectureBD_afficherNaissance.php)
- *
- * Peut �tre pas le bon endroit
- * mais je replique cette fonction ici
- * pour l'appliquer � la pagbackendUR/lectureBD_afficherNaissance.php
+ * Pour les popup chez la page d'accueil (Panel->Afficher)
+ * Pour le popup chez lectureBD.php( lectureBD.php->backend/lectureBD_afficherNaissance.php)
+ * Pour lepopup chez lectureBD2.php: C'est la seule qui assure en de resultat multibles
+ * appliquee aussi page backend/lectureBD_afficherNaissance.php
  *
  */
 function ouvrePop(url) {
