@@ -1,10 +1,10 @@
 
 <?php
-// accueil.php
+
+// accueil.php, lectureBD.php, lectureBD2.php
+
 session_start();
-  //require_once 'backend/connection_mysqli.php';
-  //require_once 'backend/connection_PDO.php';
-  
+  //require_once 'connection_mysqli.php';
    require_once 'connection_PDO.php';
   
   
