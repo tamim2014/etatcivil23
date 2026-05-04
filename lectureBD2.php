@@ -66,8 +66,10 @@
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />
 	 <link href="css/responsivelectureBD.css"  rel="stylesheet"/>
 	 <!--
-	    ⚠️Attention. form est le parent des colones, pas .contenu ⚠️  
-	    ⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture( comme ici) ⚠️
+	    ⚠️Attention!
+		⚠️ Dans lectureBD.php, lectureBD2.php: .contenu{ display:flex;} 👈  car il est le bon parent
+        ⚠️ Dans les autres pages:	form { display:flex;} 👈  car les colonne_laterale, colonne_contenu sont dans form	
+		🎁 Flexbox: On remplace "float:left" sur les contenu par "display:flex" sur le conteneur 
 	 -->
 	 <script src="js/jquery.js"></script>
 	 <script src="js/capture_items.js"></script> <!-- ça n'a rien à faire là ! -->
@@ -87,8 +89,8 @@
 		</div>
     </header>
 	
-    <!-- on remplace float:left sur les contenu par display:flex sur le conteneur  -->
-	<div class="contenu" style="display:flex; margin-bottom:0;"  >
+    
+	<div class="contenu" style="display:flex; margin-bottom:0;"> <!-- 🎁 FlexBox: on remplace float:left sur les contenu par display:flex sur le conteneur  -->
 		<!-- LE PANNEAU DE GAUCHE :  -->
 		<div class="colonne_laterale"  >
 			<aside class="aside1" >
@@ -118,7 +120,12 @@
 			<aside class="aside2">
 				<table  class="tabledroite" style="padding-top:0;">
 					 <tr><td > 
-                         <div class="mnayvawo" style="height:auto;"><button  class="boutoyahemnayivawo"> Acte extrait de la pr&eacute;fecture de:<span id="wilaya_" style="color:#000066;  font-size: 17px; font-style: italic; font-family: \"Times New Roman\", Georgia, Serif;" > <?php  echo  $p; ?></span> </button>   </div>					 
+                         <div class="mnayvawo" style="height:auto;">
+						        <button  class="boutoyahemnayivawo"> 
+							        Acte extrait de la préfecture de:
+									<span id="wilaya_"> <?php  echo  $p; ?> </span>
+								</button>
+						 </div>					 
 						 <div class="line1" style="width:98%; height:5px; margin:auto;"></div>
 
 						 <div class="mnayvawo mnayvawo2 scrolbar scrolbarSearch" style="height:auto; max-height:28.5em !important; padding:5.8em; overflow-y:auto;">

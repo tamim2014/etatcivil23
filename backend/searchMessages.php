@@ -6,13 +6,14 @@
  * DESTINATION: lectureBD2.php
  *
  * On prend juste la saisie et on le transmet à lectureBD2.php
- * Au passage, on gere les messages relatifs à la saisie utilisateur
+ * Au passage, on gere des messages relatifs à la saisie utilisateur
  *
  * ✅ 1. On prend un filtre: La saisie( nom ou numéro de document)
- * ✅ 2. On fait un select(from liste) par ce filtre : 
- *        Juste pour l'affichage des messages utilisateurs
+ * ✅ 2. On fait un select(from liste) sur ce filtre : 
+ *       ✔️ 2.1 S'il trouve rien => Message:"Aucun resultat trouvé !"
+ *       ✔️ 2.2 S'il trouve qlq chose => Redirection vers lectureBD2( en lui transmettant le filtre)
+ *        
  * ✅ 3. On stocke le filtre dans une session: 👉 il sera utilisé par ??
- * ✅ 4. On transmet le filtre à  lectureBD2.php (GET)
  *
  */
 
@@ -48,7 +49,7 @@ session_start();
 		}else{
 		 // ✅ 3. On stocke le filtre dans une session: 👉 il sera utilisé par ??
 			$_SESSION["acte"] = $numero;
-		 // ✅ 4. On transmet le filtre à  lectureBD2.php
+		 // ✅ Redirection - On transmet le filtre à  lectureBD2.php
 			header("Location: lectureBD2.php?num=".$numero ); exit;
 		}
 	}
@@ -77,7 +78,7 @@ session_start();
 		}else{
 		 // ✅ 3. On stocke le filtre dans une session: 👉 il sera utilisé par ??
 			$_SESSION["nom"]=$nomm;
-		 // ✅ 4. On transmet le filtre à  lectureBD2.php
+		 // ✅ Redirection - On transmet le filtre à  lectureBD2.php
 			header("Location: lectureBD2.php?nom=".$nomm ); exit;
 		}
 	}

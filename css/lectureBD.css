@@ -149,6 +149,14 @@
 			  background: inherit; /*  couleur du canal */
 			  
 		 }
+		 
+		/* Affichage de la prefecture(ennhaut de la table): lectureBD.php, lectureBD2.php */
+		#wilaya_{
+			color:#000066;  
+			font-size: 17px; 
+			font-style: italic; 
+			font-family: \"Times New Roman\", Georgia, Serif;
+		}
 /*
    	Astuce pour tester si le css est bien chargé 
 	et pour identifier tous les composants de la page 

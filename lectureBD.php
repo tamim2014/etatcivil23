@@ -21,17 +21,12 @@
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />
 	 <link href="css/accordeon2.css" rel="stylesheet" /> 
 	 <link href="css/responsivelectureBD.css"  rel="stylesheet"/>
-	 <style>
-       	.contenu{
-		      /*⚠️  On remplace float:left sur les contenus par display:flex sur le conteneur ⚠️      */
-	         /*⚠️⚠️ Attention. form est le parent des colones, pas .contenu                  ⚠️⚠️   */
-	        /*⚠️⚠️⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture ⚠️⚠️⚠️*/
-	      
-		  display: flex; /** 🎯 */
-		  
-        }
-	 </style>
-	 
+		<!--
+	    ⚠️Attention!
+		⚠️ Dans lectureBD.php, lectureBD2.php: .contenu{ display:flex;} 👈  car il est le bon parent
+        ⚠️ Dans les autres pages:	form { display:flex;} 👈  car les colonne_laterale, colonne_contenu sont dans form	
+		🎁 Flexbox: On remplace "float:left" sur les contenu par "display:flex" sur le conteneur 
+	     -->
 	 <script src="js/jquery.js"></script>
 	 <script src="js/capture_items.js"></script>  <!--  <script src="js/acteOutSlide.js"></script> -->
 	 <script src="js/lectureBD.js"></script>
@@ -51,8 +46,7 @@
 				<?php include("inc/lecture/topMenu.php"); ?> 
 		</div>
     </header>
-
-	<div class="contenu" style="margin-bottom:0;"  >
+    <div class="contenu" style="display:flex; margin-bottom:0;"> <!-- 🎁 FlexBox: on remplace float:left sur les contenu par display:flex sur le conteneur  -->
 		<!-- LE PANNEAU DE GAUCHE :  -->
 		<div class="colonne_laterale" >
 			<aside class="aside1">
@@ -81,12 +75,17 @@
 		<div class="colonne_contenu" style="padding:0;">
 			<aside class="aside2">
 				<table  class="tabledroite" style="padding-top:0;">
-				     <!-- <caption style="caption-side:top"> <font color="#FFFFFF"><h3> Liste des actes de naissance </h3></caption> -->
-					 <tr><td > 
-                         <div class="mnayvawo"><button  class="boutoyahemnayivawo"> Actes extraits de la pr&eacute;fecture de:<span id="wilaya_" style="color:#000066;  font-size: 17px; font-style: italic; font-family: \"Times New Roman\", Georgia, Serif;" > <?php  echo  $s; ?></span> </button>   </div>					 
-						 <div class="line1" style="width:98%; height:5px; margin:auto;"></div>
-						 <!-- Conteneur de la table -->
-						 <div id="yivawo" class="scrolbar" ></div> 
+				    <!-- <caption style="caption-side:top"> <font color="#FFFFFF"><h3> Liste des actes de naissance </h3></caption> -->
+					<tr><td > 
+                        <div class="mnayvawo">
+						    <button  class="boutoyahemnayivawo">
+ 							    Actes extraits de la préfecture de:
+								<span id="wilaya_"> <?php  echo  $s; ?></span>
+							</button>   
+						</div>					 
+						<div class="line1" style="width:98%; height:5px; margin:auto;"></div>
+						<!-- Conteneur de la table -->
+						<div id="yivawo" class="scrolbar" ></div> 
 					 </td></tr>
 				</table>
 				<!-- Suppression sous-menu personnalisé(Remplacé par sous-menus de l'accrdéon du topnav) -->  
