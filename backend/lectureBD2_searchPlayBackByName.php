@@ -1,25 +1,33 @@
 
 <?php  
-//Resulat(affiché sur lectureBD2.php) de la recherche effectuée sur la page d'accueil: Une table en une seule ligne et 7 colonnes(en haut à droite)
-//"La connaissance s'acquiert par l'expérience, tout le reste n'est que de l'information" .Albert Einstein.
+/*
+ * Résultat de recherche(traitement/affichage): lectureBD2.php
+ *
+ * ✅ 1. On recupere le filtre(saisie): Transmis par "backend/serchEngine.php"
+ * ✅ 2. On fait un select(from liste) par ce filtre  
+ * ✅ 3. Récupération des données dans 🎁$donnees: 
+ *       Pour affichage du resultat dans une table
+ *
+ */
+    // ✅ 1. On recupere le filtre(saisie): Transmis par "backend/serchEngine.php"
     if(!isset($_GET['num'])) $_GET['num']="";    $num=$_GET['num']; //acte
 	if(!isset($_GET['nom'])) $_GET['nom']="";     $nom=$_GET['nom'];//$nom = mysqli_real_escape_string($conn, $_GET['nom']);
-
-     //$requete = "SELECT * FROM liste WHERE acte=".$num." OR  nom=$nom'";
-	 
+    
+	
+	// ✅ 2. On fait un select(from liste) par ce filtre 
+    //Pourquoi ne pas faire dans un seul fichier: $requete = "SELECT * FROM liste WHERE acte=".$num." OR  nom=$nom'";
 	 /* mysqli
       $requete = "SELECT * FROM liste WHERE   nom='".ltrim($nom)."'" ;	  	
 	  $resultNom = mysqli_query($conn,$requete); 
 	  */
-	  
      //pdo
 	$sql = "SELECT * FROM liste WHERE nom = :nom";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([  // Exécution avec paramètre sécurisé
 		'nom' => ltrim($nom)
 	]);
-    	 
-
+	
+    // ✅ 3. Récupération des données dans 🎁$donnees: Pour affichage du resultat dans une table 	 
 	 $table='<table  class="resultat_moteur couleurPoliceTableResultat" style="left:42.11%; top:18%;"  >';
 	 $table.= '<tr ><th>ID</th><th>Nom </th><th> Prenom </th><th>Acte numero</th><th style="color:transparent;">Edit</th><th style="color:transparent;">Imprimer</th><th style="color:transparent;">Afficher</th></tr>';
 	 //while ($donnees = mysqli_fetch_array($resultNom) ) 
@@ -43,7 +51,8 @@
  
 	  //mysqli_close($conn);
 	  $conn = null;
-
+	  
+      //"La connaissance s'acquiert par l'expérience, tout le reste n'est que de l'information" .Albert Einstein.
 ?>
 
 

@@ -5,18 +5,22 @@
 
    /** 
     *
-	* num et nom  proviennent de la page accuiel.php
-	* respectivement à la ligne47 et à la ligne72 de la page d'accueil
+	* ✅ 1. On recupere le filtre(saisie): Transmis par "backend/serchEngine.php"
+	* ✅ 2. Select(par le filtre)
+	* ✅ 3. Récupération des données dans 🎁$donnees: 
+	*       Juste pour affichage de la "prefecture" en haut de page
 	*
-	* accuiel.php/ligne47: header("Location: lectureBD2.php?num=".$numero );
-	* accuiel.php/ligne72: header("Location: lectureBD2.php?nom=".$nomm );
-	*
+	* ✅ 4. Appel de l'affichage(selon le filtre recuperé):
+	*          lectureBD2_searchPlayBack.php ou 
+	*          lectureBD2_searchPlayBackByName.php
 	*/
-
+	
+	
+    // ✅ 1. On recupere le filtre(saisie): Transmis par "backend/serchEngine.php"
     if(!isset($_GET['num'])) $_GET['num']="";    $num=$_GET['num']; 
 	if(!isset($_GET['nom'])) $_GET['nom']="";     $nom=$_GET['nom']; 
 	
-	
+	// ✅ 2. Select(par le filtre)
 	//require_once 'backend/connection_mysqli.php'; //⚠️ searchEngine connete déjà mais en pdo
 	 
 	/**  mysqli
@@ -42,11 +46,11 @@
 		$requete = $conn->prepare("SELECT * FROM liste WHERE nom = :nom");
 		$requete->execute(['nom' => ltrim($nom)]);
 	}
-	while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) {
-		$p = $donnees["prefecture"]; // Récupération des données
-	}
 	
-
+	// ✅ 3. Récupération des données : Juste pour affichage de la "prefecture" en haut de page
+	while ($donnees = $requete->fetch(PDO::FETCH_ASSOC)) {
+		$p = $donnees["prefecture"]; 
+	}
 ?>
 
 
@@ -63,24 +67,20 @@
 	 <link href="css/responsivelectureBD.css"  rel="stylesheet"/>
 	 <style>
 	     /* Table resultat de recherche par noms */
-		 .scrolbar::-webkit-scrollbar-track {
+		 .scrolbarSearch::-webkit-scrollbar-track {
 			  background: inherit; /*  couleur du canal */
 			  
 		 }
-		.mnayvawo{
-		   height:auto;
-	     }
-		 .contenu{
-		    /* on ⚠️⚠️⚠️remplace float:left sur les contenus par display:flex sur le conteneur⚠️⚠️⚠️ */
-	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Attention. form est le parent des colones, pas .contenu ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
-	       /*⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture ⚠️⚠️⚠️⚠️⚠️⚠️⚠️  */
-	       display: flex;
-         }
+        
+
 
 	 </style>
-	 
+	 <!--
+	    ⚠️Attention. form est le parent des colones, pas .contenu ⚠️  
+	    ⚠️Par contre .contenu est le bon parent dans les pages d'accès en lecture( comme ici) ⚠️
+	 -->
 	 <script src="js/jquery.js"></script>
-	 <script src="js/capture_items.js"></script>    <!--    <script src="js/acteOutSlide.js"></script> -->
+	 <script src="js/capture_items.js"></script> <!-- ça n'a rien à faire là ! -->
 	 <script src="js/lectureBD.js"></script>
 </head>
 
@@ -96,8 +96,9 @@
 				<?php include("inc/accueil/accueil_menucentral.php"); ?> 
 		</div>
     </header>
-
-	<div class="contenu" style="margin-bottom:0;"  >
+	
+    <!-- on remplace float:left sur les contenu par display:flex sur le conteneur  -->
+	<div class="contenu" style="display:flex; margin-bottom:0;"  >
 		<!-- LE PANNEAU DE GAUCHE :  -->
 		<div class="colonne_laterale"  >
 			<aside class="aside1" >
@@ -127,12 +128,12 @@
 			<aside class="aside2">
 				<table  class="tabledroite" style="padding-top:0;">
 					 <tr><td > 
-                         <div class="mnayvawo"><button  class="boutoyahemnayivawo"> Acte extrait de la pr&eacute;fecture de:<span id="wilaya_" style="color:#000066;  font-size: 17px; font-style: italic; font-family: \"Times New Roman\", Georgia, Serif;" > <?php  echo  $p; ?></span> </button>   </div>					 
+                         <div class="mnayvawo" style="height:auto;"><button  class="boutoyahemnayivawo"> Acte extrait de la pr&eacute;fecture de:<span id="wilaya_" style="color:#000066;  font-size: 17px; font-style: italic; font-family: \"Times New Roman\", Georgia, Serif;" > <?php  echo  $p; ?></span> </button>   </div>					 
 						 <div class="line1" style="width:98%; height:5px; margin:auto;"></div>
 
-						 <div class="mnayvawo mnayvawo2 scrolbar" style="padding:5.8em;  max-height:28.5em !important; overflow-y:auto;">
+						 <div class="mnayvawo mnayvawo2 scrolbar scrolbarSearch" style="height:auto; max-height:28.5em !important; padding:5.8em; overflow-y:auto;">
                             <?php 
-							//Resulat de la recherche: Une table en une seule ligne et 7 colonnes(en haut à droite)
+							//✅ 4. Appel du traitement/affichage(selon le filtre recuperé): Une table
 							if(!empty($_GET['num'])){include("backend/lectureBD2_searchPlayBack.php");}
 							else if(!empty($_GET['nom'])) {include("backend/lectureBD2_searchPlayBackByName.php");}
 							//"La connaissance s'acquiert par l'expérience, tout le reste n'est que de l'information" .Albert Einstein.

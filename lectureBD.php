@@ -1,7 +1,8 @@
 
 <?php 
   //session_start();  backend/searcheEngin demarre une session
-  include("backend/searchEngine.php"); 
+  include("backend/searchEngine.php");
+  // c'la valeur capturée par capture_items.js et transmis à lectureBD_aficherNaissance.php
   if(!isset($_SESSION["pref"])) $_SESSION["pref"]=""; $s=$_SESSION["pref"]; 
   
 ?>
@@ -18,7 +19,7 @@
      <link href="css/slide.css"     rel="stylesheet"   />
 	 <link href="css/dropdown.css"  rel="stylesheet"    />
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />
-	 <link href="css/accordeon2.css" rel="stylesheet" /> <!-- Obsolete et viré!-- c'est pour l'ancien menu:Exclusivement sur cette page!  -->
+	 <link href="css/accordeon2.css" rel="stylesheet" /> 
 	 <link href="css/responsivelectureBD.css"  rel="stylesheet"/>
 	 <style>
        	.contenu{
@@ -30,8 +31,6 @@
 		  
         }
 	 </style>
-
-	 
 	 
 	 <script src="js/jquery.js"></script>
 	 <script src="js/capture_items.js"></script>  <!--  <script src="js/acteOutSlide.js"></script> -->

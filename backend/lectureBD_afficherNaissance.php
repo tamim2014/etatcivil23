@@ -5,7 +5,7 @@ session_start();
 
 //Défintion des varibles: ATTENTION! LE FAIRE TOUJOURS AVANT LA CONNEXION
 
-//$pr=$_GET['pr'];
+//transmis par capture_items.js
 $pr = isset($_GET['pr']) ? trim($_GET['pr']) : '';
 
 $pr=ltrim($pr);// Voilà la solution MASHA ALLAH. Un espace s'est glissé en début de chaîne, il fallait le supprimer
