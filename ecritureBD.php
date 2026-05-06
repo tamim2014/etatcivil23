@@ -26,7 +26,7 @@
 	 <link href="css/ecritureBD.css" rel="stylesheet" title="Style" />
 	 <link href="css/ecritureBDmenudroite.css" rel="stylesheet" title="Style" />
 	 <link href="css/responsiveTopnav.css" rel="stylesheet" title="Style" />
-	 <link href="css/responsiveEcritureBD.css" rel="stylesheet" title="Style" />
+	 <link href="css/responsivecritureBD.css" rel="stylesheet" title="Style" />
      <style>
 		 /* 🧩 Nettoyage: Virer tous les résidus ccs qui trainent dans ecritureBD.css ( à mettre dans ecritureBD.css) */
 	     		 

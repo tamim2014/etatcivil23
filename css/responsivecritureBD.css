@@ -52,6 +52,11 @@
 		#menudroite a .kangalaheMenu input, #menudroite .kangalaheMenu input, #menudroite .kangalaheMenu a input {
 			width:100%;
 		}
+		/* serrer les btns */
+		.dropdown{
+			margin-top:0 !important;
+			padding-top:0 !important;
+		}
 	}
 	
    /*
