@@ -1,0 +1,60 @@
+ /**
+  * Garges-Les-Gonesses
+  * 06.05.26
+  */
+ 
+ 
+ /* 🧩 responsivEcritureBD.css */
+	 /* ✅ Desactiver le flex du .contenu */
+	.page-form .contenu {
+		display:block ; /* ou grid */
+	}
+	 /* ✅ Activer un flex sur form(conteneur des colonnes) */
+	form {
+		display:flex;
+		flex:1; /* au cas où son conteneur reste en flex */
+		width:100% ;
+		flex-wrap: wrap;				
+	}
+	/* ✅ Descendre les colonnes */
+	form .colonne_laterale, form .colonne_contenu{
+		flex: 1 1 auto; /* 🎯 c' là que ça s'passe: colonnes responsives*/
+		
+	}
+	
+	/* ✅ petit descktop et mobile */
+	@media screen and (max-width: 1000px) {
+		/* ecritureBD.php */
+		form{ 
+			height:auto; 
+			gap:0; 
+		} 
+		.colonne_laterale, .colonne_contenu{ 
+		   min-width: 100% ; /* ⚠️ */
+		   height:auto;
+		   margin:0;
+		   padding:0; 
+		} 
+		.tablegauche, .tabledroite, .tablemenu{ 
+			  width:100%; 
+			  min-height:auto !important; 
+		}
+		
+		/* inc/ecriture/ecritureBD_menudroite.php */
+		#menudroite{
+			padding-top:1.5em;
+			padding-bottom:1.5em;
+		}
+		.kangalaheMenu{
+			width:auto !important;
+		}
+		/* btn Accueil(transparent),  btns Enregistrer, Rectifier, Nouveau document */
+		#menudroite a .kangalaheMenu input, #menudroite .kangalaheMenu input, #menudroite .kangalaheMenu a input {
+			width:100%;
+		}
+	}
+	
+   /*
+	  Le test qui sauve : tjrs poser ça pour debug
+	  * { outline: 1px solid red; }
+   */
