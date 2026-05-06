@@ -1,6 +1,5 @@
 <?php
  echo '
-  
 	<ul style="margin-left:5%;">
 	  <li class="dropdown" >
 		<button class="dropbtn btnHover btn-accueil"><a href="accueil.php">Accueil</a></button>
@@ -32,10 +31,7 @@
 		   <a href="#">Nouvel Acte de dec&egrave;s </a>
 		   <a href="#">Liste Acte de dec&egrave;s </a>
 		 </div>	
-         		 
 	   </li>
 	</ul> 
-	   
 ';
- 
 ?>

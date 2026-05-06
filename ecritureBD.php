@@ -32,13 +32,95 @@
 		      * { outline: 1px solid red; }
 		  */
 	     
-	     /* 🧩 Agrandir les champs de saisie dans le panneau de gauche( à mettre dans ecritureBD.css) */
+	    /* 🧩 Les champs de saisie dans le panneau de gauche */
 
-		 /* 🧩 Agrandir les champs de saisie dans le panneau centrale ( à mettre dans ecritureBD.css) */
+			   .tablegauche tr td select, .tablegauche tr td input{
+				   padding:.1em .3em .1em .5em; /* 8px */
+				   width:52%;
+				   
+				   border:1px solid #ccc;
+				   outline:none;
+				   transition: all 0.2s ease; /* border-color 0.2s esase box-shadow o.2s ease; */
+                   background-color:#f9fafb;	/* #fff */			   
+			   }
+			   .tablegauche tr td select{
+				   padding:.2em .3em !important;
+			   }
+			   .tablegauche tr td select:focus,
+			   .tablegauche tr td input:focus,
+               .tablegauche tr td select:focus,
+                body div.contenu form div.colonne_contenu aside table.tabledroite  tr td input:focus{
+				   border-color: #4A90E2; /* bleu moderne */
+				   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+				   background-color:#fff;
+			   }
+		
+		/* 🧩 Les champs de saisie dans le panneau centrale  */
 			 body div.contenu form div.colonne_contenu aside table.tabledroite  tr td input{
 				 padding:.5em .5em ;
 				 margin-bottom:.3em ;
+				 
+				 border:1px solid #ccc;
+				 outline:none;
+				 transition: all 0.2s ease; /* border-color 0.2s esase box-shadow o.2s ease; */
+                 background-color:#f9fafb;
 			 }
+             #tetu{  padding:1.2em .5em !important;}
+			 
+		/* 🧩 Les Boutons  */
+			   
+			   /* Bouton Afficher l'acte, bouton imprimer l'acte  */
+			   .btnOutput{
+				   margin-top:2em ;
+				   /* padding:10px 18px; */
+				   background-color:#4A90E2 !important; /* #cdbe9f; */
+				   color:#fff !important;
+				   cursor:pointer !important;
+				   border-radius:5px !important;
+				   font-size:14px !important;
+				   font-weight:500 !important;
+				   transition: background 0.2s ease,
+				               box-shadow 0.2s ease,
+							   transform 0.2s ease !important;
+			   }
+			   .btnOutput:hover{
+				   background:#3a7bc8 !important;
+			   }
+			   .btnOutput:active{
+				   transform:#3a7bc8 translateY(1px) !important;
+			   }
+			   btnOutput:focus,  .btnWrite:focus, .writeBtn:focus {
+				   outline:none !important;
+				   box-shadow:0 0 0 2px rgba(74, 144, 226, 0.3) !important;
+			   }
+			   
+			   /* Boutons Enregistrer, Rectifier, Nouveau document */
+			   .btnWrite, #btnWrite, .writeBtn{
+				   border:1px solid #ccc !important;
+				   transition: all 0.2s ease !important; 
+                   background-color:#f9fafb !important;	/* #cdbe9f; */
+			       cursor:pointer !important;
+				   border-radius:5px !important;
+				   font-weight:500 !important;
+				   transition: background 0.2s ease,
+				               box-shadow 0.2s ease,
+							   transform 0.2s ease !important;
+			  }
+
+			  .btnWrite:hover{
+				   background:#fff !important;
+			   }
+			   .writeBtn:hover{
+				   color:#fff !important;
+			   }
+
+
+			   
+			   
+			   
+			   
+
+
 					 		 
 		 /* 🧩 Nettoyage: Virer tous les résidus ccs qui trainent dans ecritureBD.css ( à mettre dans ecritureBD.css) */
 		 
@@ -129,7 +211,7 @@
 						 <tr>
 						   <td><br> Pr&eacute;fecture: </td>
 						   <td><br>  
-								<select  name="prefecture"  onChange="changement(this)"  >
+								<select  name="prefecture"  onChange="changement(this)">
 									 <optgroup label="Ngazidja"> 
 									 <option> </option>
 									 <option>Moroni-Bambao </option>
@@ -166,7 +248,7 @@
 						 </tr>
 						 <tr>
 							 <td></td>
-							 <td><font color="##1D702D"> <b>Centre d\'Etat Civil:</b></font></td>		
+							 <td><font color="##1D702D"> <b>Centre d'Etat Civil:</b></font></td>		
 						 </tr>
 						 <tr>
 							 <td>Centre</td> 
@@ -207,8 +289,11 @@
 								 <td> <input type="text" name="naissance_minuite"  placeholder=" minuite" > </td>
 							</tr>
 							
-							 <tr> <td> <input type="text" name="naissance_nom_prenom" placeholder="est n&eacute;(e)" ></td></tr>
-							 <tr> <td> <input type="text" name="naissance_lieu"  placeholder=" &agrave;(lieu)" > </td></tr>
+							 <tr> 
+							     <td> <input type="text" name="naissance_nom_prenom" placeholder="est n&eacute;(e)" ></td>
+							     <td> <input type="text" name="naissance_lieu"  placeholder=" &agrave;(lieu)" > </td>
+							 </tr>
+
 							 <tr> <td> <input type="text" name="naissance_sexe"   placeholder=" du sexe" > </td></tr>
 							 
 							 <tr><td> <font color="##1D702D"><b>Le p&egrave;re</b></font></td><td> <font color="##1D702D"><b>La m&egrave;re</b></font></td> </tr>
@@ -240,7 +325,7 @@
 								 <td style="text-align: left; margin-left:10px;"> <span style=" margin-left:90px;" >  Titre  recepteur</span></td>
 							 </tr>
 							 <tr> 
-								 <td> <input type="date" name="datejugement" placeholder=" date jugement : " style="height:15px;"> </td>
+								 <td> <input id="tetu" type="date" name="datejugement" placeholder=" date jugement : " style="height:15px;"> </td>
 								 <td style="text-align: left; margin-left:10px;"> <span style=" margin-left:90px;" >Date  jugement</span></td>
 							 </tr>
 						 </p>
@@ -255,7 +340,7 @@
 									}
 								?>
 								<a id="acteAJAX" href="afficher2.php?n=<?php echo $valeurphp; ?>"   onclick="  window.open(this.href, 'Popup', 'scrollbars=1,resizable=1,height=409,width=918 ,  top=258, left=175 '); return false; " >
-									<input type="button"  value="Afficher l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em;" />  
+									<input type="button"  value="Afficher l'acte" align="center" class="btnOutput"/>  
 								</a>
 							</td>
 							
@@ -263,7 +348,7 @@
 							        //if(!isset($donnees["ID"])) $donnees["ID"]=1; 
                                     $id_document = $_SESSION['id_document'] ?? ""; // 🎁
 							    ?>
-							<td> <a  href="imprimer.php?n=<?php echo $id_document; ?> "  ><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em; "/></a></td>
+							<td> <a  href="imprimer.php?n=<?php echo $id_document; ?> "  ><input type="button"  value="Imprimer l'acte" align="center" class="btnOutput"/></a></td>
 						</tr>
 					</table>
 				    <?php
@@ -278,7 +363,7 @@
 			<!-- LE PANNEAU DE DROITE: -->
 			<div class="colonne_laterale" style="width: 25%; ">
 				<aside class="aside1">			    
-		            <table  class="tablemenu" style="min-height:35.5em; " >    
+		            <table  class="tablemenu" style="min-height:35.75em; " >    
 						<tr><td>
 							<?php include("inc/ecriture/ecritureBD_menudroite.php"); ?>
 						</td></tr>
