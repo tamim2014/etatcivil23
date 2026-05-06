@@ -88,8 +88,6 @@
 	// 👁️ 3. Afficher tous les utilisateurs( officiers d'état civil)
 	    $officiers = "SELECT * FROM listeofficiers";
 	    $resultat = mysqli_query($conn, $officiers);
-		
-
 ?>
 
 
@@ -230,6 +228,7 @@
     <div class="footer" style="text-align:left; ">
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
     </div>
+    <!-- css du sticky: en bas de usermanagement.css --> 	
 	<script src="js/sticky.js"></script>
 </body>
 </html>

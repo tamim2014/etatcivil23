@@ -223,8 +223,7 @@
 	}
 	
 
-	/* Ajout d'un sticky */
-	 
+	/* Ajout d'un sticky */	 
 	.sticky { 
 	    position: fixed;
 	    top: 0;

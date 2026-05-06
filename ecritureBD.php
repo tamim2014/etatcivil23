@@ -20,16 +20,15 @@
 	 <title> Acces en Ecriture &aacute; la base etatcivil</title>
 	 <link href="css/template.css"  rel="stylesheet" type="text/css" >
 	 <link href="css/accueil22.css" rel="stylesheet"   />
-	 
 	 <link href="css/slide.css"     rel="stylesheet"   /> 
 	 <link href="css/dropdown.css"  rel="stylesheet"    />
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />  <!-- pour les bouton du panneau central -->
 	 <link href="css/ecritureBD.css" rel="stylesheet" title="Style" />
 	 <link href="css/ecritureBDmenudroite.css" rel="stylesheet" title="Style" />
+	 <link href="css/responsiveTopnav.css" rel="stylesheet" title="Style" />
      <style>
-
 	     /*
-		      Le test qui sauve : tjrs poser ça avant tout chantier css
+		      Le test qui sauve : tjrs poser ça pour debug
 		      * { outline: 1px solid red; }
 		  */
 	     
@@ -40,22 +39,8 @@
 				 padding:.5em .5em ;
 				 margin-bottom:.3em ;
 			 }
-		 
-		 
+					 		 
 		 /* 🧩 Nettoyage: Virer tous les résidus ccs qui trainent dans ecritureBD.css ( à mettre dans ecritureBD.css) */
-		 
-		 
-
-		 /* 🧩 in/ecriture/ecritureBD_menudroite.php ( à mettre dans ecritureBD.css) */
-
-
-			
-
-		 
-		 
-		 
-		 /* 🧩 Sticky */
-		 /* 🧩 responsive topnav */
 		 
 		 
 		 /* 🧩 responsivEcritureBD.css */
@@ -75,7 +60,6 @@
 				flex: 1 1 auto; /* 🎯 c' là que ça s'passe: colonnes responsives*/
 				
 			}
-			
 			
 			/* ✅ petit descktop et mobile */
 			@media screen and (max-width: 1000px) {
@@ -108,18 +92,8 @@
 					width:100%;
 				}
 			}
-			
-			
-			/* ✅ mobile 
-			 * Virer le header
-			 * Virer les padding-top/padding-bottom sur les items du topnav
-			 * Virer le border sur les items du topnav
-			 * Aligner l'item "Accueil" à droite(au mm niveau que les autres ⚠️)
-			*/
 	     		 
 	 </style>	 
-     
-
 	 <script src="js/jquery.js"></script>
 	 <script src="js/ecritureBD.js"></script>
 </head>
@@ -316,7 +290,10 @@
 	</div><!-- div.contenu -->
     <div class="footer" style="text-align:left; ">
         <span ><span style="color:#555;">2026 &copy; -</span> <span style="color:#333;">Etat civil</span></span>
-    </div>	
+    </div>
+    <!-- css du sticky: en bas de template.css -->
+	<!-- sticky.js : si je le met en haut ça prend pas -->
+    <script src="js/sticky.js"></script>	
 </body>
 </html>
 

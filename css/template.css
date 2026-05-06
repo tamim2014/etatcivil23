@@ -123,6 +123,16 @@ img {
     margin-right: 8px;
 }
 
+/* Ajout d'un sticky */	 
+.sticky { 
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+#myTopnav{
+	z-index:3;
+}
+
 /* ################ TASKS: COMPLEMENT DE ZONNING(Virer l'espace vide en bas=> remplir donc, toute la hauteur de la page) ###########################################  */ 
   
   form{
