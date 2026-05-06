@@ -25,13 +25,97 @@
 	 <link href="css/dropdown.css"  rel="stylesheet"    />
 	 <link href="css/lectureBD.css" rel="stylesheet" title="Style" />  <!-- pour les bouton du panneau central -->
 	 <link href="css/ecritureBD.css" rel="stylesheet" title="Style" />
+	 <link href="css/ecritureBDmenudroite.css" rel="stylesheet" title="Style" />
      <style>
 
-		 /* Agrandir les champs de saisie dans le panneau centrale */
-		 body div.contenu form div.colonne_contenu aside table.tabledroite  tr td input{
-			 padding:.5em .5em ;
-			 margin-bottom:.3em ;
-		 }
+	     /*
+		      Le test qui sauve : tjrs poser ça avant tout chantier css
+		      * { outline: 1px solid red; }
+		  */
+	     
+	     /* 🧩 Agrandir les champs de saisie dans le panneau de gauche( à mettre dans ecritureBD.css) */
+
+		 /* 🧩 Agrandir les champs de saisie dans le panneau centrale ( à mettre dans ecritureBD.css) */
+			 body div.contenu form div.colonne_contenu aside table.tabledroite  tr td input{
+				 padding:.5em .5em ;
+				 margin-bottom:.3em ;
+			 }
+		 
+		 
+		 /* 🧩 Nettoyage: Virer tous les résidus ccs qui trainent dans ecritureBD.css ( à mettre dans ecritureBD.css) */
+		 
+		 
+
+		 /* 🧩 in/ecriture/ecritureBD_menudroite.php ( à mettre dans ecritureBD.css) */
+
+
+			
+
+		 
+		 
+		 
+		 /* 🧩 Sticky */
+		 /* 🧩 responsive topnav */
+		 
+		 
+		 /* 🧩 responsivEcritureBD.css */
+		     /* ✅ Desactiver le flex du .contenu */
+			.page-form .contenu {
+				display:block ; /* ou grid */
+			}
+			 /* ✅ Activer un flex sur form(conteneur des colonnes) */
+		    form {
+				display:flex;
+				flex:1; /* au cas où son conteneur reste en flex */
+				width:100% ;
+				flex-wrap: wrap;				
+			}
+			/* ✅ Descendre les colonnes */
+			form .colonne_laterale, form .colonne_contenu{
+				flex: 1 1 auto; /* 🎯 c' là que ça s'passe: colonnes responsives*/
+				
+			}
+			
+			
+			/* ✅ petit descktop et mobile */
+			@media screen and (max-width: 1000px) {
+				/* ecritureBD.php */
+				form{ 
+					height:auto; 
+					gap:0; 
+				} 
+				.colonne_laterale, .colonne_contenu{ 
+				   min-width: 100% ; /* ⚠️ */
+				   height:auto;
+				   margin:0;
+				   padding:0; 
+				} 
+				.tablegauche, .tabledroite, .tablemenu{ 
+					  width:100%; 
+					  min-height:auto !important; 
+				}
+				
+				/* inc/ecriture/ecritureBD_menudroite.php */
+				#menudroite{
+					padding-top:1.5em;
+					padding-bottom:1.5em;
+				}
+				.kangalaheMenu{
+					width:auto !important;
+				}
+				/* btn Accueil(transparent),  btns Enregistrer, Rectifier, Nouveau document */
+			    #menudroite a .kangalaheMenu input, #menudroite .kangalaheMenu input, #menudroite .kangalaheMenu a input {
+					width:100%;
+				}
+			}
+			
+			
+			/* ✅ mobile 
+			 * Virer le header
+			 * Virer les padding-top/padding-bottom sur les items du topnav
+			 * Virer le border sur les items du topnav
+			 * Aligner l'item "Accueil" à droite(au mm niveau que les autres ⚠️)
+			*/
 	     		 
 	 </style>	 
      
@@ -40,7 +124,7 @@
 	 <script src="js/ecritureBD.js"></script>
 </head>
 
-<body>
+<body class="page-form">
 	<!-- <div id="acteN"></div> -->
 	<header>
 		<div class="en-tete">
@@ -186,7 +270,7 @@
 								 <td style="text-align: left; margin-left:10px;"> <span style=" margin-left:90px;" >Date  jugement</span></td>
 							 </tr>
 						 </p>
-						 <tr> 
+						<tr> 
 							<td>
 								 <!-- recuperer  une veriable javascripte +actesaisi+  en php -->
 								<?php 
@@ -206,7 +290,7 @@
                                     $id_document = $_SESSION['id_document'] ?? ""; // 🎁
 							    ?>
 							<td> <a  href="imprimer.php?n=<?php echo $id_document; ?> "  ><input type="button"  value="Imprimer l'acte" align="center"  style="background-color: #cdbe9f; margin-top:2em; "/></a></td>
-						 </tr>
+						</tr>
 					</table>
 				    <?php
 					    if (!empty($_SESSION['message'])) {

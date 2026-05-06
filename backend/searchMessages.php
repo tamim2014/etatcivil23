@@ -2,7 +2,7 @@
 <?php
 
 /**
- * SOURCES:accueil.php, lectureBD.php, lectureBD2.php
+ * SOURCES:     accueil.php, lectureBD.php, lectureBD2.php
  * DESTINATION: lectureBD2.php
  *
  * On prend juste la saisie et on le transmet à lectureBD2.php

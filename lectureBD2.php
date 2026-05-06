@@ -1,6 +1,6 @@
 
 <?php 
-  //session_start();  //backend/searcheEngin demarre une session
+  //session_start();  //backend/searcheEngin demarre déjà  une session
     include("backend/searchMessages.php"); // c'est une connection pdo ici  qui m'oblige à convertir 3 fichiers
 
    /** 
@@ -128,7 +128,7 @@
 						 </div>					 
 						 <div class="line1" style="width:98%; height:5px; margin:auto;"></div>
 
-						 <div class="mnayvawo mnayvawo2 scrolbar scrolbarSearch" style="height:auto; max-height:28.5em !important; padding:5.8em; overflow-y:auto;">
+						 <div class="mnayvawo mnayvawo2 scrolbar scrolbarSearch">
                             <?php 
 							//✅ 4. Appel du traitement/affichage(selon le filtre recuperé): Une table
 							if(!empty($_GET['num'])){include("backend/lectureBD2_searchPlayBack.php");}

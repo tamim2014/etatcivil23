@@ -1,0 +1,26 @@
+	/*
+	 * Garges-Les-Gonesse
+	 * 06.05.26
+	 */
+
+
+	#menudroite{
+		 width:80%;
+		 margin-left:10%; 
+		 height:30%; 
+	 }
+	 #menudroite a .kangalaheMenu input, #menudroite .kangalaheMenu input{
+		height:30px;   
+		display: block; 
+		margin:auto; 
+	 }
+	 /* btn Accueil(transparent) */
+	 #menudroite a .kangalaheMenu input {
+		background:#558C89; 
+		color:transparent; 
+	 }
+	 /* btns Enregistrer, Rectifier, Nouveau document */
+	 #menudroite .kangalaheMenu input, #menudroite .kangalaheMenu a input {
+		 background-color:#cdbe9f; 
+		 height: 30px;				 
+	}

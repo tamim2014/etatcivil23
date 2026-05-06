@@ -1,24 +1,24 @@
 <?php
  echo '
- 	    <div style="width:80%; margin-left:10%; height:30%; ">
+ 	    <div id="menudroite">
                 <a href="accueil.php"> 
-				    <div  class="kangalaheMenu" style="padding-top : 20px;  height: 50px; width:120%; left:-15px; "  >  
-					   <input type="button" class="btnHover"  value="Accueil"   style="background:#558C89; color:transparent; height:30px;   display: block;  margin:auto;  "/>
+				    <div class="kangalaheMenu">  
+					   <input type="button" class="btnHover" value="Accueil" />
 					</div>     
 				</a>
 				<p> &nbsp;</p>
-				<div class="kangalaheMenu" style=" padding-top:20px;  height: 50px;  width:120%; left:-15px; ">			  
-				    <!-- <input type="submit" onclick="actenumero();" id="enregistrer"  name="Enregistrer" value="Enregistrer" style="background-color:#cdbe9f;  height:30px; display:block;  margin :auto;"  /> -->					
+				<div class="kangalaheMenu">			  
+				    <!-- <input type="submit" onclick="actenumero();" id="enregistrer"  name="Enregistrer" value="Enregistrer"/> -->					
 				    <!-- Ne pas rediriger vers l\'accueil: Afficher pour verifier d\'abord  -->
-					<input type="submit"  id="enregistrer"  name="Enregistrer" value="Enregistrer" style="background-color:#cdbe9f;  height:30px; display:block;  margin :auto;"  /> 					
+					<input type="submit" id="enregistrer" name="Enregistrer" value="Enregistrer"/> 					
 		        </div>
 				<p> &nbsp;</p>
-				<div class="kangalaheMenu" style=" padding-top:20px;  height: 50px;  width:120%; left:-15px; ">
-				    <a href="#" ><input type="button"  value="Rectifier"   align="center"  style="background-color: #cdbe9f;   height: 30px;  "   /></a>
+				<div class="kangalaheMenu">
+				    <a href="#" ><input type="button" value="Rectifier" align="center" /></a>
                 </div>
 				<p> &nbsp;</p>
-				<div class="kangalaheMenu" style="padding-top:20px;  height: 50px;  width:120%; left:-15px; ">  
-				   <a href="ecritureBD.php"><input type="button" name="enregistrer_" value="Nouveau document" style="background-color:#cdbe9f;  height: 30px; " onclick="alert(\'Enregistrement effectué.\');" /></a>
+				<div class="kangalaheMenu">  
+				   <a href="ecritureBD.php"><input type="button" name="enregistrer_" value="Nouveau document" onclick="alert(\'Enregistrement effectué.\');" /></a>
 		        </div>
         </div>
 ';

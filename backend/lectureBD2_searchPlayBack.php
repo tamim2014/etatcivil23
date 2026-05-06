@@ -11,14 +11,14 @@
  */
     // ✅ 1. On recupere le filtre(saisie): Transmis par "backend/serchEngine.php"
     if(!isset($_GET['num'])) $_GET['num']="";    $num=$_GET['num']; //acte
-	if(!isset($_GET['nom'])) $_GET['nom']="";     $nom=$_GET['nom'];//$nom = mysqli_real_escape_string($conn, $_GET['nom']);
+	if(!isset($_GET['nom'])) $_GET['nom']="";     $nom=$_GET['nom'];// ❌ Pas la peine ici car on traite seulement le numero
    
     // ✅ 2. On fait un select(from liste) par ce filtre 
     /** mysqli
     $requete = "SELECT * FROM liste WHERE acte=".$num ;  
 	$result = mysqli_query($conn,$requete);
     */
-	//pdp
+	//pdo
 	$sql = "SELECT * FROM liste WHERE acte = :num";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([  // Exécution avec paramètre sécurisé
