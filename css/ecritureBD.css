@@ -93,7 +93,7 @@
 		   .btnOutput:active{
 			   transform:#3a7bc8 translateY(1px) !important;
 		   }
-		   btnOutput:focus,  .btnWrite:focus, .writeBtn:focus {
+		   .btnOutput:focus,  .btnWrite:focus, .writeBtn:focus {
 			   outline:none !important;
 			   box-shadow:0 0 0 2px rgba(74, 144, 226, 0.3) !important;
 		   }

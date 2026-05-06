@@ -52,10 +52,52 @@
 		#menudroite a .kangalaheMenu input, #menudroite .kangalaheMenu input, #menudroite .kangalaheMenu a input {
 			width:100%;
 		}
-		/* serrer les btns */
-		.dropdown{
-			margin-top:0 !important;
-			padding-top:0 !important;
+
+		/* ✅ Reajustement après test: Sur andoid */
+		/*✔️ Désactiver le sticky */
+		.sticky { 
+		    position: static;
+		    top:auto;
+	    }
+		/*✔️ Aligner les labels de la declaration */
+		.jugement{
+			margin-left:0 !important;
+		}
+		.jugement span{
+			margin-left:auto !important;
+		} 
+		/*✔️ combler la colonne de droite */
+		#menudroite{
+			padding:0;
+			margin-left:0;
+			width:100%;
+		}
+		#menudroite .kangalaheMenu input{
+			background-color: #74AFAD !important;
+			color:#ececea;
+			padding-top:15px !important;
+			padding-bottom:35px !important;
+			border:none !important;
+			border-top:1px solid #558C89 !important;
+			cursor:pointer;
+			border-radius:0 !important;
+			font-weight:500 !important;
+		    transition: background 0.2s ease,
+					   box-shadow 0.2s ease,
+					   transform 0.2s ease !important;
+		}
+	    #menudroite .kangalaheMenu input:active{
+		   transform:#3a7bc8 translateY(1px) !important;
+	    }
+	   #menudroite .kangalaheMenu input:focus {
+		   outline:none !important;
+		   box-shadow:0 0 0 2px rgba(74, 144, 226, 0.3) !important;
+	    }
+		#menudroite .kangalaheMenu input:hover{
+		    background-color: #558C89 !important;
+		}
+		#menudroite a .kangalaheMenu, .footer{
+			display:none;
 		}
 	}
 	
